@@ -1,0 +1,15 @@
+/Users/mac/Projects/Tutorial2/Tutorial2/bin/Debug/net6.0/Tutorial2
+/Users/mac/Projects/Tutorial2/Tutorial2/bin/Debug/net6.0/Tutorial2.deps.json
+/Users/mac/Projects/Tutorial2/Tutorial2/bin/Debug/net6.0/Tutorial2.runtimeconfig.json
+/Users/mac/Projects/Tutorial2/Tutorial2/bin/Debug/net6.0/Tutorial2.dll
+/Users/mac/Projects/Tutorial2/Tutorial2/bin/Debug/net6.0/Tutorial2.pdb
+/Users/mac/Projects/Tutorial2/Tutorial2/obj/Debug/net6.0/Tutorial2.csproj.AssemblyReference.cache
+/Users/mac/Projects/Tutorial2/Tutorial2/obj/Debug/net6.0/Tutorial2.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mac/Projects/Tutorial2/Tutorial2/obj/Debug/net6.0/Tutorial2.AssemblyInfoInputs.cache
+/Users/mac/Projects/Tutorial2/Tutorial2/obj/Debug/net6.0/Tutorial2.AssemblyInfo.cs
+/Users/mac/Projects/Tutorial2/Tutorial2/obj/Debug/net6.0/Tutorial2.csproj.CoreCompileInputs.cache
+/Users/mac/Projects/Tutorial2/Tutorial2/obj/Debug/net6.0/Tutorial2.dll
+/Users/mac/Projects/Tutorial2/Tutorial2/obj/Debug/net6.0/refint/Tutorial2.dll
+/Users/mac/Projects/Tutorial2/Tutorial2/obj/Debug/net6.0/Tutorial2.pdb
+/Users/mac/Projects/Tutorial2/Tutorial2/obj/Debug/net6.0/Tutorial2.genruntimeconfig.cache
+/Users/mac/Projects/Tutorial2/Tutorial2/obj/Debug/net6.0/ref/Tutorial2.dll

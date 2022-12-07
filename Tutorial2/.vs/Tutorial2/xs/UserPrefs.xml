@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{5CECD898-9A4E-48D1-A3ED-D7F6AAD85279}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Tutorial2 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Tutorial2/Program.cs">
+    <Files>
+      <File FileName="../../Desktop/OBJ C#/Tutorial1/Tutorial1/Program.cs" Line="8" Column="10" />
+      <File FileName="Tutorial2/Program.cs" Line="21" Column="39" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Tutorial2" expanded="True">
+            <Node name="Tutorial2" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>
