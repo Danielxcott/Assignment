@@ -1,0 +1,15 @@
+/Users/mac/Desktop/OBJ C#/Tutorial3/Tutorial3/obj/Debug/net6.0/Tutorial3.csproj.AssemblyReference.cache
+/Users/mac/Desktop/OBJ C#/Tutorial3/Tutorial3/obj/Debug/net6.0/Tutorial3.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mac/Desktop/OBJ C#/Tutorial3/Tutorial3/obj/Debug/net6.0/Tutorial3.AssemblyInfoInputs.cache
+/Users/mac/Desktop/OBJ C#/Tutorial3/Tutorial3/obj/Debug/net6.0/Tutorial3.AssemblyInfo.cs
+/Users/mac/Desktop/OBJ C#/Tutorial3/Tutorial3/obj/Debug/net6.0/Tutorial3.csproj.CoreCompileInputs.cache
+/Users/mac/Desktop/OBJ C#/Tutorial3/Tutorial3/bin/Debug/net6.0/Tutorial3
+/Users/mac/Desktop/OBJ C#/Tutorial3/Tutorial3/bin/Debug/net6.0/Tutorial3.deps.json
+/Users/mac/Desktop/OBJ C#/Tutorial3/Tutorial3/bin/Debug/net6.0/Tutorial3.runtimeconfig.json
+/Users/mac/Desktop/OBJ C#/Tutorial3/Tutorial3/bin/Debug/net6.0/Tutorial3.dll
+/Users/mac/Desktop/OBJ C#/Tutorial3/Tutorial3/bin/Debug/net6.0/Tutorial3.pdb
+/Users/mac/Desktop/OBJ C#/Tutorial3/Tutorial3/obj/Debug/net6.0/Tutorial3.dll
+/Users/mac/Desktop/OBJ C#/Tutorial3/Tutorial3/obj/Debug/net6.0/refint/Tutorial3.dll
+/Users/mac/Desktop/OBJ C#/Tutorial3/Tutorial3/obj/Debug/net6.0/Tutorial3.pdb
+/Users/mac/Desktop/OBJ C#/Tutorial3/Tutorial3/obj/Debug/net6.0/Tutorial3.genruntimeconfig.cache
+/Users/mac/Desktop/OBJ C#/Tutorial3/Tutorial3/obj/Debug/net6.0/ref/Tutorial3.dll
