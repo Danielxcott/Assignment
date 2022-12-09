@@ -1,0 +1,1 @@
+SELECT fullname as FULLNAME, address as ADDRESS, moviesRented as MOVIERENTED, salutation as SALUTATION FROM [Cinema].[dbo].[members] INNER JOIN [Cinema].[dbo].[movies] ON [Cinema].[dbo].[members].[memberId] = [CInema].[dbo].[movies].[memberId] INNER JOIN [Cinema].[dbo].[salutations] ON [Cinema].[dbo].[members].[salutationId] = [Cinema].[dbo].[salutations].[salutationId]
