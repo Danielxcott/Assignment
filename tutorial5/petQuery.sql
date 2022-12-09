@@ -1,0 +1,1 @@
+SELECT DISTINCT name FROM [Pet].[dbo].[cats] UNION SELECT DISTINCT name FROM [Pet].[dbo].[dogs];
