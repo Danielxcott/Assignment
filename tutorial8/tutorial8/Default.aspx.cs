@@ -16,7 +16,7 @@ namespace tutorial8
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if (!IsPostBack)
             {
                 ViewTable();
             }
@@ -104,11 +104,11 @@ namespace tutorial8
             con.Open();
             SqlCommand cmd = new SqlCommand("Select id,name From [Dogs] Where id = @id", con);
             cmd.Parameters.AddWithValue("id", getId);
+            CancelBtn.Style.Add("display", "inline-block");
             
              SqlDataReader read = cmd.ExecuteReader();
             if (read.Read())
             {
-                
                 Session["dogId"] = read.GetValue(0).ToString();
                 NameCreate.Text = read.GetString(1).ToString();
                 CreateBtn.Style["display"] = "none";
@@ -124,9 +124,10 @@ namespace tutorial8
             ViewTable();
         }
 
-        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        protected void Cancel_Btn(object sender, EventArgs e)
         {
             UpdateBtn.Style.Add("display", "none");
+            CancelBtn.Style.Add("display", "none");
             CreateBtn.Style.Add("display", "inline-block");
             NameCreate.Text = String.Empty;
             GridView1.EditIndex = -1;
@@ -144,20 +145,7 @@ namespace tutorial8
             else
             {
                 con.Open();
-                SqlCommand check = new SqlCommand("Select name From [Dogs] Where name = @name", con);
-                check.Parameters.AddWithValue("@name", NameCreate.Text.ToString());
-                SqlDataAdapter sa = new SqlDataAdapter(check);
-                DataTable dt = new DataTable();
-                sa.Fill(dt);
-                if (dt.Rows.Count > 0)
-                {
-                    GridView1.EditIndex = -1;
-                    ViewTable();
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Name had already existed in the lists, write different name.');", true);
-                    con.Close();
-                }
-                else
-                {
+                
                     SqlCommand cmd = new SqlCommand("Update [Dogs] Set name = @name where id = @id ", con);
                     cmd.Parameters.AddWithValue("name", NameCreate.Text.ToString());
                     cmd.Parameters.AddWithValue("id", Session["dogId"]);
@@ -166,12 +154,13 @@ namespace tutorial8
                     Session.Remove("dogId");
                     NameCreate.Text = String.Empty;
                     UpdateBtn.Style.Add("display", "none");
-                    CreateBtn.Style.Add("display", "inline-block");
+                     CancelBtn.Style.Add("display", "none");
+                     CreateBtn.Style.Add("display", "inline-block");
 
                     GridView1.EditIndex = -1;
                     ViewTable();
                     con.Close();
-                }
+                
             }
 
         }
