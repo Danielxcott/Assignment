@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.DynamicData;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -11,6 +12,8 @@ namespace tutorial8
 {
     public partial class _Default : Page
     {
+        private SqlConnection con = new SqlConnection(@"Data Source=THEINZAN-PC;Initial Catalog=Dogs;User ID=sa;Password=Password2254@;Pooling=False");
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!IsPostBack)
@@ -18,14 +21,13 @@ namespace tutorial8
                 ViewTable();
             }
         }
-
-        SqlConnection con = new SqlConnection(@"Data Source=THEINZAN-PC;Initial Catalog=Dogs;User ID=sa;Password=Password2254@;Pooling=False");
-
         protected void Create_Btn(object sender, EventArgs e)
         {
             if(NameCreate.Text == String.Empty)
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Required input field.');", true);
+                GridView1.EditIndex = -1;
+                ViewTable();
             }
             else
             {
@@ -35,9 +37,12 @@ namespace tutorial8
                     SqlDataAdapter sa = new SqlDataAdapter(check);
                     DataTable dt = new DataTable();
                     sa.Fill(dt);
-                    if (dt.Rows.Count > 0)
+                if (dt.Rows.Count > 0)
                     {
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Name had already existed in the lists, write different name.');", true);
+                    GridView1.EditIndex = -1;
+                    ViewTable();
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Name had already existed in the lists, please write differ name.');", true);
+                    con.Close();
                     }
                     else
                     {
@@ -45,7 +50,10 @@ namespace tutorial8
                         cmd.Parameters.AddWithValue("@name", NameCreate.Text.ToString());
                         cmd.ExecuteNonQuery();
                         con.Close();
-                        Response.Redirect("Default.aspx");
+                        NameCreate.Text = String.Empty;
+                        UpdateBtn.Style.Add("display", "none");
+                        CreateBtn.Style.Add("display", "inline-block"); 
+                        GridView1.EditIndex = -1;
                         ViewTable();
                     }
                 
@@ -54,7 +62,9 @@ namespace tutorial8
 
         protected void Clear_Btn(object sender, EventArgs e)
         {
-            NameCreate.Text = string.Empty; 
+            NameCreate.Text = string.Empty;
+            GridView1.EditIndex = -1;
+            ViewTable();
         }
 
         protected void ViewTable()
@@ -63,6 +73,7 @@ namespace tutorial8
             DataTable dt = new DataTable();
             SqlDataAdapter sa = new SqlDataAdapter(cmd);
             sa.Fill(dt);
+
             if (dt.Rows.Count > 0)
             {
                 GridView1.DataSource = dt;
@@ -87,13 +98,81 @@ namespace tutorial8
             ViewTable();
         }
 
-        protected void GridView1_RowEditing(object sender, GridViewDeleteEventArgs e)
+        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
         {
+            int getId = Convert.ToInt32(GridView1.DataKeys[e.NewEditIndex].Value.ToString());
+            con.Open();
+            SqlCommand cmd = new SqlCommand("Select id,name From [Dogs] Where id = @id", con);
+            cmd.Parameters.AddWithValue("id", getId);
+            
+             SqlDataReader read = cmd.ExecuteReader();
+            if (read.Read())
+            {
+                
+                Session["dogId"] = read.GetValue(0).ToString();
+                NameCreate.Text = read.GetString(1).ToString();
+                CreateBtn.Style["display"] = "none";
+                UpdateBtn.Style["display"] = "inline-block";
+                con.Close();
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Something wrong!');", true);
+                con.Close();
+            }
+            GridView1.EditIndex = -1;
+            ViewTable();
+        }
 
+        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            UpdateBtn.Style.Add("display", "none");
+            CreateBtn.Style.Add("display", "inline-block");
+            NameCreate.Text = String.Empty;
+            GridView1.EditIndex = -1;
+            ViewTable();
         }
 
         protected void Update_Btn(object sender, EventArgs e)
         {
+            if (NameCreate.Text == String.Empty)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Required input field.');", true);
+                GridView1.EditIndex = -1;
+                ViewTable();
+            }
+            else
+            {
+                con.Open();
+                SqlCommand check = new SqlCommand("Select name From [Dogs] Where name = @name", con);
+                check.Parameters.AddWithValue("@name", NameCreate.Text.ToString());
+                SqlDataAdapter sa = new SqlDataAdapter(check);
+                DataTable dt = new DataTable();
+                sa.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    GridView1.EditIndex = -1;
+                    ViewTable();
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Name had already existed in the lists, write different name.');", true);
+                    con.Close();
+                }
+                else
+                {
+                    SqlCommand cmd = new SqlCommand("Update [Dogs] Set name = @name where id = @id ", con);
+                    cmd.Parameters.AddWithValue("name", NameCreate.Text.ToString());
+                    cmd.Parameters.AddWithValue("id", Session["dogId"]);
+                    cmd.ExecuteNonQuery();
+
+                    Session.Remove("dogId");
+                    NameCreate.Text = String.Empty;
+                    UpdateBtn.Style.Add("display", "none");
+                    CreateBtn.Style.Add("display", "inline-block");
+
+                    GridView1.EditIndex = -1;
+                    ViewTable();
+                    con.Close();
+                }
+            }
 
         }
     }
