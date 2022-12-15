@@ -69,22 +69,21 @@ namespace tutorial8
 
         protected void ViewTable()
         {
-            SqlCommand cmd = new SqlCommand("Select * From [Dogs]",con);
-            DataTable dt = new DataTable();
-            SqlDataAdapter sa = new SqlDataAdapter(cmd);
-            sa.Fill(dt);
-
-            if (dt.Rows.Count > 0)
+            using (SqlConnection con = new SqlConnection(@"Data Source=THEINZAN-PC;Initial Catalog=Dogs;User ID=sa;Password=Password2254@;Pooling=False"))
             {
-                GridView1.DataSource = dt;
-                GridView1.DataBind();
-            }
-            else
-            {
-                DataRow dr = dt.NewRow();
-                dt.Rows.Add(dr);
-                GridView1.DataSource = dt;
-                GridView1.DataBind();
+                using (SqlCommand cmd = new SqlCommand("Select * From [Dogs]"))
+                {
+                    cmd.Connection = con;
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        using (DataTable dt = new DataTable())
+                        {
+                            sda.Fill(dt);
+                            GridView1.DataSource = dt;
+                            GridView1.DataBind();
+                        }
+                    }
+                }
             }
         }
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)

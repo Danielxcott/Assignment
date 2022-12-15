@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="tutorial8._Default" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
- <h1>Create list of dogs</h1>
+ <h1>Create a list of dogs</h1>
     <div>
         <asp:Label ID="NameLabel" runat="server" Text="Dog name"></asp:Label> <br />
         <asp:TextBox ID="NameCreate" runat="server" CssClass="form-control" ValidationGroup="create"></asp:TextBox>
@@ -31,7 +31,9 @@
                     </ItemTemplate>
                 </asp:TemplateField>            
             </Columns>  
-             <EmptyDataTemplate>No Record Available</EmptyDataTemplate>  
+             <EmptyDataTemplate>
+                  <div align="center">No records Avaliable.</div>
+             </EmptyDataTemplate>  
     </asp:GridView>  
 
 </asp:Content>
