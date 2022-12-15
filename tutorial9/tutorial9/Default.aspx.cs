@@ -32,13 +32,13 @@ namespace tutorial9
             switch (fileExtension)
             {
                 case ".txt":
-                    getTxtTable(filePaths);
+                    GetTxtTable(filePaths);
                     break;
                 case ".xlsx":
-                    getXlsxTable(filePaths, "yes");
+                    GetXlsxTable(filePaths, "yes");
                     break;
                 case ".csv":
-                    getCsvTable(filePaths);
+                    GetCsvTable(filePaths);
                     break;
                 default:
                     ErrorMsg.Style.Add("display", "block");
@@ -49,7 +49,7 @@ namespace tutorial9
         }
 
         //View txt file table
-        void getTxtTable(string path)
+        void GetTxtTable(string path)
         {
             DataTable table = new DataTable();
             table.Columns.Add("No");
@@ -72,7 +72,7 @@ namespace tutorial9
         }
 
         //View excel file table
-        void getXlsxTable(string path,string hdr)
+        void GetXlsxTable(string path,string hdr)
         {
             string con = ConfigurationManager.ConnectionStrings["excelcon"].ConnectionString;
             con = string.Format(con, path, hdr);
@@ -91,7 +91,7 @@ namespace tutorial9
         }
 
         //View Csv file table
-        void getCsvTable(string path)
+        void GetCsvTable(string path)
         {
             DataTable table = new DataTable();
             table.Columns.Add("No");
