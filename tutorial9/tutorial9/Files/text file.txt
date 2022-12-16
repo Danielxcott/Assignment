@@ -1,5 +1,0 @@
-1,Chandelier,Lights,30,$1200,In Stock
-2,Stool,Chair,13,$120,In Stock
-3,Table Lamp,Lights,30,$50,In Stock
-4,Vase,Plastic,0,$14, Out Of Stock
-5,Mauthe Grandfather Clock,Clock,4,$1350,In Stock
