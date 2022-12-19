@@ -1,0 +1,17 @@
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.DAO\bin\Debug\TEST.DAO.dll
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.DAO\bin\Debug\TEST.DAO.pdb
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.DAO\bin\Debug\TEST.Entities.dll
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.DAO\bin\Debug\TEST.Entities.pdb
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.DAO\obj\Debug\TEST.DAO.csproj.AssemblyReference.cache
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.DAO\obj\Debug\TEST.DAO.csproj.CoreCompileInputs.cache
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.DAO\obj\Debug\TEST.DAO.csproj.CopyComplete
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.DAO\obj\Debug\TEST.DAO.dll
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.DAO\obj\Debug\TEST.DAO.pdb
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.DAO\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.DAO\bin\Debug\System.Security.AccessControl.dll
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.DAO\bin\Debug\System.Security.Permissions.dll
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.DAO\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.DAO\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.DAO\bin\Debug\System.Security.AccessControl.xml
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.DAO\bin\Debug\System.Security.Permissions.xml
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.DAO\bin\Debug\System.Security.Principal.Windows.xml

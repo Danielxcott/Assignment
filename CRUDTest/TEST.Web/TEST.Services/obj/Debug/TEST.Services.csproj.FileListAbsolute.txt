@@ -1,0 +1,11 @@
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.Services\bin\Debug\TEST.Services.dll
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.Services\bin\Debug\TEST.Services.pdb
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.Services\bin\Debug\TEST.DAO.dll
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.Services\bin\Debug\TEST.Entities.dll
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.Services\bin\Debug\TEST.DAO.pdb
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.Services\bin\Debug\TEST.Entities.pdb
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.Services\obj\Debug\TEST.Services.csproj.AssemblyReference.cache
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.Services\obj\Debug\TEST.Services.csproj.CoreCompileInputs.cache
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.Services\obj\Debug\TEST.Services.csproj.CopyComplete
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.Services\obj\Debug\TEST.Services.dll
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.Services\obj\Debug\TEST.Services.pdb

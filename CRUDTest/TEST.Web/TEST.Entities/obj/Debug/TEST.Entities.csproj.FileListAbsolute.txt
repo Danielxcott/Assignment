@@ -1,0 +1,6 @@
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.Entities\bin\Debug\TEST.Entities.dll
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.Entities\bin\Debug\TEST.Entities.pdb
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.Entities\obj\Debug\TEST.Entities.csproj.AssemblyReference.cache
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.Entities\obj\Debug\TEST.Entities.csproj.CoreCompileInputs.cache
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.Entities\obj\Debug\TEST.Entities.dll
+C:\Users\TheinZan\Desktop\assignment\CRUDTest\TEST.Web\TEST.Entities\obj\Debug\TEST.Entities.pdb
