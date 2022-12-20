@@ -16,19 +16,19 @@ namespace tutorial7
         }
         protected void Login_Btn(object sender, EventArgs e)
         {
-            Session["email"] = "example@gmail.com";
-            Session["password"] = "1234";
-            var getEmail = email.Text.ToString();
-            var getPwd = password.Text.ToString();
+            Session["Email"] = "example@gmail.com";
+            Session["Password"] = "1234";
+            var getemail = txtEmail.Text.ToString();
+            var getpwd = txtPassword.Text.ToString();
 
-            if (Convert.ToString(Session["email"]) == getEmail && Convert.ToString(Session["password"]) == getPwd)
+            if (Convert.ToString(Session["Email"]) == getemail && Convert.ToString(Session["Password"]) == getpwd)
             {
                 Response.Redirect("Home.aspx");
             }
             else
             {
-                ErrorFeedback.Text = "Your email or password is incorrect";
-                ErrorFeedback.ForeColor = System.Drawing.Color.Red;
+                errorFeedback.Text = "Your email or password is incorrect";
+                errorFeedback.ForeColor = System.Drawing.Color.Red;
             }
         }
     }
