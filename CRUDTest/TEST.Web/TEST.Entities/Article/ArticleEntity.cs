@@ -17,6 +17,11 @@ namespace TEST.Entities.Article
         public int ArticleId { get; set; }
 
         /// <summary>
+        /// Gets or sets the category id.
+        /// </summary>
+        public int CategoryId { get; set; }
+
+        /// <summary>
         /// Gets or Sets Title
         /// </summary>
         public string Title { get; set; }
@@ -54,6 +59,7 @@ namespace TEST.Entities.Article
         internal void InitializedObjectValue()
         {
             this.ArticleId = 0;
+            this.CategoryId = 0;
             this.Title = string.Empty;
             this.Slug = string.Empty;
             this.Description = string.Empty;

@@ -7,48 +7,48 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TEST.Web.Views.Article
+namespace TEST.Web.Views.Category
 {
 
 
-    public partial class ArticleCreate
+    public partial class CategoryCreate
     {
 
         /// <summary>
-        /// hdnPostId control.
+        /// hdnCategoryId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdnPostId;
+        protected global::System.Web.UI.WebControls.HiddenField hdnCategoryId;
 
         /// <summary>
-        /// txtArticleTtl control.
+        /// txtName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtArticleTtl;
+        protected global::System.Web.UI.WebControls.TextBox txtName;
 
         /// <summary>
-        /// requireTitleValidator control.
+        /// requireNameValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator requireTitleValidator;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator requireNameValidator;
 
         /// <summary>
-        /// txtArticleSlug control.
+        /// txtSlug control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtArticleSlug;
+        protected global::System.Web.UI.WebControls.TextBox txtSlug;
 
         /// <summary>
         /// requireSlugValidator control.
@@ -60,49 +60,13 @@ namespace TEST.Web.Views.Article
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requireSlugValidator;
 
         /// <summary>
-        /// txtArticleDescribe control.
+        /// txtCreatedAt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtArticleDescribe;
-
-        /// <summary>
-        /// requireDescriptionValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator requireDescriptionValidator;
-
-        /// <summary>
-        /// ddlCategory control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCategory;
-
-        /// <summary>
-        /// requireCategoryValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator requireCategoryValidator;
-
-        /// <summary>
-        /// txtArticleCreated control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtArticleCreated;
+        protected global::System.Web.UI.WebControls.TextBox txtCreatedAt;
 
         /// <summary>
         /// requireDateValidator control.

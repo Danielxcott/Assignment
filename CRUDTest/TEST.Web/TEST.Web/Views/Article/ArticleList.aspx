@@ -1,16 +1,23 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ArticleList.aspx.cs" Inherits="TEST.Web.Views.Article.ArticleList" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <script src="../../Scripts/sweetalert.min.js"></script>
+    <link href="../../Content/style.css" rel="stylesheet" />
     <div class="row mt-3">
            <div class="col-md-12">
                <asp:LinkButton ID="LnkBtnCreate" CssClass="btn btn-primary" OnClick="LnkBtn_Create" runat="server">Create</asp:LinkButton>
            </div>
      </div>
-    <asp:GridView ID="GVArticles" runat="server" CssClass="table table-bordered table-striped mt-3" AutoGenerateColumns="false" OnRowCommand="gvArticle_RowCommand" OnRowDeleting="gvArticle_RowDeleting">
-        <Columns>
+    <asp:GridView ID="GVArticles" runat="server" CssClass="table table-bordered table-striped mt-3" AutoGenerateColumns="false" OnRowCommand="gvArticle_RowCommand" OnRowDeleting="gvArticle_RowDeleting" AllowPaging="true"
+    OnPageIndexChanging="OnPageIndexChanging" PageSize="8">
+        <Columns HorizontalAlign="Center">
             <asp:TemplateField HeaderText="#">
                 <ItemTemplate>
                    <asp:Label ID="lblArticleID" runat="server" Text='<%# Eval("ArticleId") %>' ></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Category Name">
+                <ItemTemplate>
+                   <asp:Label ID="lblCategoryName" runat="server" Text='<%# Eval("Name") %>' ></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Title">
@@ -47,6 +54,7 @@
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
+        <PagerStyle HorizontalAlign = "Center" CssClass = "GridPager" />
          <EmptyDataTemplate>
            <div align="center">No records Avaliable.</div>
          </EmptyDataTemplate>  

@@ -60,6 +60,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Category\CategoryDao.cs" />
     <Compile Include="Common\DbConnection.cs" />
     <Compile Include="Article\ArticleDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

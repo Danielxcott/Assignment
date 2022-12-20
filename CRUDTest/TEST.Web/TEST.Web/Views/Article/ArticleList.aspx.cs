@@ -32,6 +32,12 @@ namespace TEST.Web.Views.Article
             GVArticles.DataBind();
         }
 
+        protected void OnPageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GVArticles.PageIndex = e.NewPageIndex;
+            this.BindGrid();
+        }
+
         protected void gvArticle_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "Edit")

@@ -22,7 +22,8 @@ namespace TEST.DAO.Article
 
         public DataTable GetAll()
         {
-            strSql = "SELECT * FROM Articles ORDER BY Title DESC";
+            strSql = "SELECT a.ArticleId, c.Name, a.Title, a.Slug, a.Description, a.Excerpt, a.CreatedAt";
+            strSql += " FROM Articles a INNER JOIN Categories c on a.CategoryId = c.CategoryId";
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
 
@@ -35,12 +36,13 @@ namespace TEST.DAO.Article
         }
 
         public bool Insert(ArticleEntity articleEntity) {
-                strSql = "INSERT INTO Articles(Title,Slug,Description,Excerpt,CreatedAt)"+"VALUES (@Title,@Slug,@Description,@Excerpt,@CreatedAt)";
+                strSql = "INSERT INTO Articles(Title,Slug,Description,Excerpt,CategoryId,CreatedAt)"+"VALUES (@Title,@Slug,@Description,@Excerpt,@CategoryId,@CreatedAt)";
             SqlParameter[] sqlParams = {
                 new SqlParameter("@Title",articleEntity.Title),
                 new SqlParameter("@Slug",articleEntity.Slug),
                 new SqlParameter("@Description",articleEntity.Description),
                 new SqlParameter("@Excerpt",articleEntity.Excerpt),
+                new SqlParameter("@CategoryId",articleEntity.CategoryId),
                 new SqlParameter("@CreatedAt",articleEntity.CreatedAt),
             };
             bool success = connection.ExecuteNonQuery(CommandType.Text, strSql ,sqlParams);
@@ -49,9 +51,10 @@ namespace TEST.DAO.Article
         
         public bool Update(ArticleEntity articleEntity)
         {
-            strSql = "UPDATE Articles SET Title=@Title,Slug=@Slug,Description=@Description,Excerpt=@Excerpt,CreatedAt=@CreatedAt WHERE ArticleId = @ArticleId";
+            strSql = "UPDATE Articles SET CategoryId=@CategoryId, Title=@Title,Slug=@Slug,Description=@Description,Excerpt=@Excerpt,CreatedAt=@CreatedAt WHERE ArticleId = @ArticleId";
             SqlParameter[] sqlParams = {
                 new SqlParameter("@ArticleId",articleEntity.ArticleId),
+                new SqlParameter("@CategoryId",articleEntity.CategoryId),
                 new SqlParameter("@Title",articleEntity.Title),
                 new SqlParameter("@Slug",articleEntity.Slug),
                 new SqlParameter("@Description",articleEntity.Description),
