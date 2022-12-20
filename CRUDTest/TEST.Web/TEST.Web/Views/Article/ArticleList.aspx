@@ -9,7 +9,7 @@
      </div>
     <asp:GridView ID="GVArticles" runat="server" CssClass="table table-bordered table-striped mt-3" AutoGenerateColumns="false" OnRowCommand="gvArticle_RowCommand" OnRowDeleting="gvArticle_RowDeleting" AllowPaging="true"
     OnPageIndexChanging="OnPageIndexChanging" PageSize="8">
-        <Columns HorizontalAlign="Center">
+        <Columns>
             <asp:TemplateField HeaderText="#">
                 <ItemTemplate>
                    <asp:Label ID="lblArticleID" runat="server" Text='<%# Eval("ArticleId") %>' ></asp:Label>
