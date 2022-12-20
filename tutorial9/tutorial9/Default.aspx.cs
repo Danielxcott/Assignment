@@ -14,34 +14,34 @@ namespace tutorial9
         }
         protected void Upload_Btn(object sender, EventArgs e)
         {
-            string fileExtension = Path.GetExtension(FileUpload1.PostedFile.FileName).ToLower();
-            string fileName = Path.GetFileName(FileUpload1.FileName);
-            string path = Server.MapPath("~/Files/") + fileName;
-            FileUpload1.PostedFile.SaveAs(path);
-            string filePath = Path.GetFullPath(path);
+            string fileextension = Path.GetExtension(fileUploadBox.PostedFile.FileName).ToLower();
+            string filename = Path.GetFileName(fileUploadBox.FileName);
+            string path = Server.MapPath("~/Files/") + filename;
+            fileUploadBox.PostedFile.SaveAs(path);
+            string filepath = Path.GetFullPath(path);
 
-            if(File.Exists(filePath))
+            if(File.Exists(filepath))
             {
-                File.Delete(filePath);
-                string newPath = Server.MapPath("~/Files/") + fileName;
-                FileUpload1.PostedFile.SaveAs(newPath);
-                string newFilePath = Path.GetFullPath(newPath);
+                File.Delete(filepath);
+                string newpath = Server.MapPath("~/Files/") + filename;
+                fileUploadBox.PostedFile.SaveAs(newpath);
+                string newfilepath = Path.GetFullPath(newpath);
 
-                switch (fileExtension)
+                switch (fileextension)
                 {
                     case ".txt":
-                        GetTxtTable(newFilePath);
+                        GetTxtTable(newfilepath);
                         break;
                     case ".xlsx":
-                        GetXlsxTable(newFilePath, "yes");
+                        GetXlsxTable(newfilepath, "yes");
                         break;
                     case ".csv":
-                        GetCsvTable(newFilePath);
+                        GetCsvTable(newfilepath);
                         break;
                     default:
-                        ErrorMsg.Style.Add("display", "block");
-                        ErrorMsg.Text = "The file extension doesn't support.";
-                        ErrorMsg.ForeColor = System.Drawing.Color.Red;
+                        lblErrorMsg.Style.Add("display", "block");
+                        lblErrorMsg.Text = "The file extension doesn't support.";
+                        lblErrorMsg.ForeColor = System.Drawing.Color.Red;
                         break;
                 }
             }
@@ -67,27 +67,27 @@ namespace tutorial9
                     table.Rows.Add(parts[0], parts[1], parts[2], parts[3], parts[4], parts[5]);
                 }
             }
-            GridView1.DataSource = table;
-            GridView1.DataBind();
+            gvList.DataSource = table;
+            gvList.DataBind();
         }
 
         //View excel file table
         void GetXlsxTable(string path, string hdr)
         {
-            FileInfo existingFile = new FileInfo(path);
-            using (ExcelPackage package = new ExcelPackage(existingFile))
+            FileInfo existingfile = new FileInfo(path);
+            using (ExcelPackage package = new ExcelPackage(existingfile))
             {
                 // get the first worksheet in the workbook
                 ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
                 ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
                 int rowno = worksheet.Dimension.End.Row;
 
-                DataTable dtTemp = new DataTable();
+                DataTable dttemp = new DataTable();
 
-                dtTemp.Columns.Add("No");
-                dtTemp.Columns.Add("Name");
-                dtTemp.Columns.Add("Country");
-                DataRow drAddItem;
+                dttemp.Columns.Add("No");
+                dttemp.Columns.Add("Name");
+                dttemp.Columns.Add("Country");
+                DataRow dradditem;
 
                 for (int row = 1; row <= worksheet.Dimension.End.Row; row++)
                 {
@@ -95,15 +95,15 @@ namespace tutorial9
                     object col2Value = worksheet.Cells[row, 2].Value;
                     object col3Value = worksheet.Cells[row, 3].Value;
 
-                    drAddItem = dtTemp.NewRow();
+                    dradditem = dttemp.NewRow();
 
-                    drAddItem["No"] = col1Value.ToString();
-                    drAddItem["Name"] = col2Value.ToString();
-                    drAddItem["Country"] = col3Value.ToString();
-                    dtTemp.Rows.Add(drAddItem);
+                    dradditem["No"] = col1Value.ToString();
+                    dradditem["Name"] = col2Value.ToString();
+                    dradditem["Country"] = col3Value.ToString();
+                    dttemp.Rows.Add(dradditem);
                 }
-                GridView1.DataSource = dtTemp;
-                GridView1.DataBind();
+                gvList.DataSource = dttemp;
+                gvList.DataBind();
             }
         }
         //View Csv file table
@@ -124,8 +124,8 @@ namespace tutorial9
                     table.Rows.Add(parts[0], parts[1], parts[2], parts[3], parts[4]);
                 }
             }
-            GridView1.DataSource = table;
-            GridView1.DataBind();
+            gvList.DataSource = table;
+            gvList.DataBind();
         }
     }
 }
