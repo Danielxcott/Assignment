@@ -24,39 +24,39 @@ namespace tutorial10
         protected global::System.Web.UI.WebControls.Label LblEmail;
 
         /// <summary>
-        /// EmailBox0 control.
+        /// txtEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox EmailBox0;
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
 
         /// <summary>
-        /// RequiredFieldValidator1 control.
+        /// requireEmailValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator requireEmailValidator;
 
         /// <summary>
-        /// regexEmailValid control.
+        /// checkingEmailFormat control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator regexEmailValid;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator checkingEmailFormat;
 
         /// <summary>
-        /// Button1 control.
+        /// btnRestPw control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnRestPw;
     }
 }

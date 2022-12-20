@@ -21,7 +21,7 @@ namespace tutorial10
 
         protected void Reset_Btn(object sender, EventArgs e)
         {
-           string mail = EmailBox0.Text.ToString();
+           string mail = txtEmail.Text.ToString();
             string body = string.Empty;
             using (StreamReader read = new StreamReader(Server.MapPath("~/Template/ResetMail.html")))
             {
@@ -30,19 +30,19 @@ namespace tutorial10
             SendMail(mail, body);
         }
 
-        private void SendMail(string mail, string messageBody)
+        private void SendMail(string mail, string messagebody)
         {
-            var versionName = new ComputerInfo().OSFullName;
+            var versionname = new ComputerInfo().OSFullName;
             string username = mail.Substring(0, mail.IndexOf("@"));
             MailAddress from = new MailAddress(mail);
             MailAddress to = new MailAddress("Moon@mailtrap.io");
             MailMessage message = new MailMessage(from, to);
-            message.Body = messageBody;
+            message.Body = messagebody;
             message.IsBodyHtml = true;
-            string mailbody = messageBody.Replace("#name#",username).Replace("#opertaion_system#", versionName).Replace("#browser_name#", HttpContext.Current.Request.Browser.Browser);
+            string mailbody = messagebody.Replace("#name#",username).Replace("#opertaion_system#", versionname).Replace("#browser_name#", HttpContext.Current.Request.Browser.Browser);
             message.Body = mailbody;
             message.Subject = "Hello ," + username;
-            Session["status"] = "change on";
+            Session["Status"] = "change on";
 
             SmtpClient client = new SmtpClient("smtp.mailtrap.io", 2525)
             {

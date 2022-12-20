@@ -16,20 +16,20 @@ namespace tutorial10
 
         protected void Change_Password(Object sender, EventArgs e)
         {
-            Session.Remove("password");
-            string newPassword = NPassword.Text.ToString();
-            string confirmPassword = CPassword.Text.ToString();
-            if(newPassword == confirmPassword)
+            Session.Remove("Password");
+            string newpassword = txtNPassword.Text.ToString();
+            string confirmpassword = txtCPassword.Text.ToString();
+            if(newpassword == confirmpassword)
             {
-                Session["ncpassword"] = confirmPassword;
+                Session["NcPassword"] = confirmpassword;
                 Response.Redirect("Default.aspx");
             }else
             {
                 ErrorMsg.InnerText = "Your new password and confirm password is not the same. Please, try again!";
                 ErrorMsg.Style.Add("display", "inline-block");
                 ErrorMsg.Style.Add("color", "Red");
-                NPassword.Text = String.Empty;
-                CPassword.Text = String.Empty;
+                txtNPassword.Text = String.Empty;
+                txtCPassword.Text = String.Empty;
             }
         }
     }

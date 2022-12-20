@@ -9,17 +9,17 @@ namespace tutorial10
 {
     public partial class Home : Page
     {
-        public string UserName { get { return (string)Session["email"]; } }
-        public string Password { get { return (string)Session["password"]; } }
+        public string UserName { get { return (string)Session["Email"]; } }
+        public string Password { get { return (string)Session["Password"]; } }
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!IsPostBack)
             {
                 if (Session.Count != 0)
                 {
-                    email.Text = UserName;
-                    password.Text = Password;
-                    name.InnerText = "Hello, " + UserName.Substring(0, UserName.IndexOf("@"));
+                    lblEmail.Text = UserName;
+                    lblPassword.Text = Password;
+                    hdrName.InnerText = "Hello, " + UserName.Substring(0, UserName.IndexOf("@"));
                 }
                 else
                 {

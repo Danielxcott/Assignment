@@ -24,66 +24,66 @@ namespace tutorial10
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl ErrorMsg;
 
         /// <summary>
-        /// Label1 control.
+        /// lblNewPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label lblNewPassword;
 
         /// <summary>
-        /// NPassword control.
+        /// txtNPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NPassword;
+        protected global::System.Web.UI.WebControls.TextBox txtNPassword;
 
         /// <summary>
-        /// RequiredFieldValidator1 control.
+        /// requirePasswordValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator requirePasswordValidator;
 
         /// <summary>
-        /// Label2 control.
+        /// lblConfirmPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label lblConfirmPassword;
 
         /// <summary>
-        /// CPassword control.
+        /// txtCPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CPassword;
+        protected global::System.Web.UI.WebControls.TextBox txtCPassword;
 
         /// <summary>
-        /// RequiredFieldValidator2 control.
+        /// requireConfirmPasswordValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator requireConfirmPasswordValidator;
 
         /// <summary>
-        /// Button1 control.
+        /// btnChangePw control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnChangePw;
     }
 }
