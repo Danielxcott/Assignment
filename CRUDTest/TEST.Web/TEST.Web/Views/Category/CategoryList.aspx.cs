@@ -27,8 +27,8 @@ namespace TEST.Web.Views.Category
         {
             CategoryService categoryService = new CategoryService();
             DataTable dt = categoryService.GetAll();
-            GVCategory.DataSource = dt;
-            GVCategory.DataBind();
+            gvCategory.DataSource = dt;
+            gvCategory.DataBind();
         }
 
         protected void gvCategory_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -41,7 +41,7 @@ namespace TEST.Web.Views.Category
 
         protected void gvCategory_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            Label getId = (Label)GVCategory.Rows[e.RowIndex].FindControl("lblCategoryID");
+            Label getId = (Label)gvCategory.Rows[e.RowIndex].FindControl("lblCategoryID");
             CategoryService categoryService = new CategoryService();
             bool success = categoryService.Delete(Convert.ToInt32(getId.Text));
             if (success)

@@ -3,10 +3,10 @@
     <script src="../../Scripts/sweetalert.min.js"></script>
     <div class="row mt-3">
            <div class="col-md-12">
-               <asp:LinkButton ID="LnkBtnCreate" CssClass="btn btn-primary" OnClick="LnkBtn_Create" runat="server">Create</asp:LinkButton>
+               <asp:LinkButton ID="btnCreate" CssClass="btn btn-primary" OnClick="LnkBtn_Create" runat="server">Create</asp:LinkButton>
            </div>
      </div>
-    <asp:GridView ID="GVCategory" runat="server" CssClass="table table-bordered table-striped mt-3" AutoGenerateColumns="false" OnRowCommand="gvCategory_RowCommand" OnRowDeleting="gvCategory_RowDeleting">
+    <asp:GridView ID="gvCategory" runat="server" CssClass="table table-bordered table-striped mt-3" AutoGenerateColumns="false" OnRowCommand="gvCategory_RowCommand" OnRowDeleting="gvCategory_RowDeleting">
         <Columns>
             <asp:TemplateField HeaderText="#">
                 <ItemTemplate>
