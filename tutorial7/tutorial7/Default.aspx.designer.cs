@@ -15,13 +15,13 @@ namespace tutorial7
     {
 
         /// <summary>
-        /// errorFeedback control.
+        /// lblErrorFeedback control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errorFeedback;
+        protected global::System.Web.UI.WebControls.Label lblErrorFeedback;
 
         /// <summary>
         /// lblEmail control.

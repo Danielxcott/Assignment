@@ -14,21 +14,21 @@ namespace tutorial7
         {
          
         }
-        protected void Login_Btn(object sender, EventArgs e)
+        protected void LoginBtn(object sender, EventArgs e)
         {
             Session["Email"] = "example@gmail.com";
             Session["Password"] = "1234";
-            var getemail = txtEmail.Text.ToString();
-            var getpwd = txtPassword.Text.ToString();
+            var email = txtEmail.Text.ToString();
+            var password = txtPassword.Text.ToString();
 
-            if (Convert.ToString(Session["Email"]) == getemail && Convert.ToString(Session["Password"]) == getpwd)
+            if (Convert.ToString(Session["Email"]) == email && Convert.ToString(Session["Password"]) == password)
             {
                 Response.Redirect("Home.aspx");
             }
             else
             {
-                errorFeedback.Text = "Your email or password is incorrect";
-                errorFeedback.ForeColor = System.Drawing.Color.Red;
+                lblErrorFeedback.Text = "Your email or password is incorrect";
+                lblErrorFeedback.ForeColor = System.Drawing.Color.Red;
             }
         }
     }

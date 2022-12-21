@@ -28,7 +28,7 @@ namespace tutorial7
             }
         }
 
-        protected void Logout_Btn(object sender, EventArgs e)
+        protected void LogoutBtn(object sender, EventArgs e)
         {
             Session.Abandon();
             Session.Clear();
