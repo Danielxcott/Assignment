@@ -21,7 +21,7 @@ namespace tutorial8
                 ViewTable();
             }
         }
-        protected void Create_Btn(object sender, EventArgs e)
+        protected void CreateBtn(object sender, EventArgs e)
         {
             if(txtName.Text == String.Empty)
             {
@@ -67,7 +67,7 @@ namespace tutorial8
             }
         }
 
-        protected void Clear_Btn(object sender, EventArgs e)
+        protected void ClearBtn(object sender, EventArgs e)
         {
             txtName.Text = string.Empty;
             gvDogLists.EditIndex = -1;
@@ -94,7 +94,7 @@ namespace tutorial8
             }
         }
 
-        protected void gvDogs_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        protected void gvDogsRowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             GridViewRow row = (GridViewRow)gvDogLists.Rows[e.RowIndex];
             Label lbldeleteid = (Label)row.FindControl("lblID");
@@ -105,7 +105,7 @@ namespace tutorial8
             ViewTable();
         }
 
-        protected void gvDogs_RowEditing(object sender, GridViewEditEventArgs e)
+        protected void gvDogsRowEditing(object sender, GridViewEditEventArgs e)
         {
             int getId = Convert.ToInt32(gvDogLists.DataKeys[e.NewEditIndex].Value.ToString());
             con.Open();
@@ -131,7 +131,7 @@ namespace tutorial8
             ViewTable();
         }
 
-        protected void Cancel_Btn(object sender, EventArgs e)
+        protected void CancelBtn(object sender, EventArgs e)
         {
             btnUpdate.Style.Add("display", "none");
             btnCancel.Style.Add("display", "none");
@@ -141,7 +141,7 @@ namespace tutorial8
             ViewTable();
         }
 
-        protected void Update_Btn(object sender, EventArgs e)
+        protected void UpdateBtn(object sender, EventArgs e)
         {
             if (txtName.Text == String.Empty)
             {

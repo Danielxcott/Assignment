@@ -7,14 +7,14 @@
         <asp:RequiredFieldValidator ID="requireNameValidate" ValidationGroup="create" runat="server" ControlToValidate="txtName" ErrorMessage="Required input field" ForeColor="Red" EnableClientScript="false"></asp:RequiredFieldValidator>
         <asp:Label ID="lblMax" runat="server" ForeColor="Red" ></asp:Label>
         <div style="margin-bottom: 15px">
-        <asp:Button ID="btnUpdate" CssClass="btn btn-primary" style="margin-right:10px; display: none" ValidationGroup="create" runat="server" Text="Update" OnClick="Update_Btn"  UseSubmitBehavior="False"/>
-        <asp:Button ID="btnCreate" CssClass="btn btn-primary" style="margin-right:10px" runat="server" Text="Create" OnClick="Create_Btn" UseSubmitBehavior="False"/>
-        <asp:Button ID="btnClear" CssClass="btn btn-danger" runat="server" Text="Clear" OnClick="Clear_Btn" />
+        <asp:Button ID="btnUpdate" CssClass="btn btn-primary" style="margin-right:10px; display: none" ValidationGroup="create" runat="server" Text="Update" OnClick="UpdateBtn"  UseSubmitBehavior="False"/>
+        <asp:Button ID="btnCreate" CssClass="btn btn-primary" style="margin-right:10px" runat="server" Text="Create" OnClick="CreateBtn" UseSubmitBehavior="False"/>
+        <asp:Button ID="btnClear" CssClass="btn btn-danger" runat="server" Text="Clear" OnClick="ClearBtn" />
         <asp:Button ID="btnCancel" runat="server" style="display:none; margin-left:10px;" 
-         Text="Cancel" CssClass="btn btn-secondary" OnClick="Cancel_Btn"  UseSubmitBehavior="False"/>
+         Text="Cancel" CssClass="btn btn-secondary" OnClick="CancelBtn"  UseSubmitBehavior="False"/>
         </div>
     </div>
-    <asp:GridView ID="gvDogLists" runat="server" CssClass="table" AutoGenerateColumns="false" DataKeyNames="id"  OnRowDeleting="gvDogs_RowDeleting" OnRowEditing="gvDogs_RowEditing">  
+    <asp:GridView ID="gvDogLists" runat="server" CssClass="table" AutoGenerateColumns="false" DataKeyNames="id"  OnRowDeleting="gvDogsRowDeleting" OnRowEditing="gvDogsRowEditing">  
             <Columns>  
                  <asp:TemplateField HeaderText="No">
                 <ItemTemplate>    
