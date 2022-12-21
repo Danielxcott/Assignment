@@ -3,11 +3,11 @@
     <script src="../../Scripts/sweetalert.min.js"></script>
     <link href="../../Content/style.css" rel="stylesheet" />
     <div class="row mt-3">
-           <div class="col-md-12">
-               <asp:LinkButton ID="LnkBtnCreate" CssClass="btn btn-primary" OnClick="LnkBtn_Create" runat="server">Create</asp:LinkButton>
+           <div class="col-12 col-md-6">
+               <asp:LinkButton ID="btnCreate" CssClass="btn btn-primary" OnClick="LnkBtn_Create" runat="server">Create</asp:LinkButton>
            </div>
      </div>
-    <asp:GridView ID="GVArticles" runat="server" CssClass="table table-bordered table-striped mt-3" AutoGenerateColumns="false" OnRowCommand="gvArticle_RowCommand" OnRowDeleting="gvArticle_RowDeleting" AllowPaging="true"
+    <asp:GridView ID="gvArticles" runat="server" CssClass="table table-bordered table-striped mt-3" AutoGenerateColumns="false" OnRowCommand="gvArticle_RowCommand" OnRowDeleting="gvArticle_RowDeleting" AllowPaging="true"
     OnPageIndexChanging="OnPageIndexChanging" PageSize="8">
         <Columns>
             <asp:TemplateField HeaderText="#">

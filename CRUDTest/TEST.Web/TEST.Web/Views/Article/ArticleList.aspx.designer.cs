@@ -15,21 +15,21 @@ namespace TEST.Web.Views.Article
     {
 
         /// <summary>
-        /// LnkBtnCreate control.
+        /// btnCreate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LnkBtnCreate;
+        protected global::System.Web.UI.WebControls.LinkButton btnCreate;
 
         /// <summary>
-        /// GVArticles control.
+        /// gvArticles control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GVArticles;
+        protected global::System.Web.UI.WebControls.GridView gvArticles;
     }
 }

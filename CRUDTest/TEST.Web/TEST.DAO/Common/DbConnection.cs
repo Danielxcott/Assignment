@@ -45,8 +45,6 @@ namespace TEST.DAO.Common
             return connectionString;
         }
 
-        private SqlConnection con = new SqlConnection(@"Data Source=p-000311;Initial Catalog=BlogDB;User ID=sa;Password=Password2254@;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-
         /// <summary>
         /// The GetPrivateProfileString.
         /// </summary>

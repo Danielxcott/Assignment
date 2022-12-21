@@ -19,6 +19,7 @@ namespace TEST.Web.Views.Article
             }
         }
 
+
         protected void LnkBtn_Create(object sender, EventArgs e)
         {
             Response.Redirect("~/Views/Article/ArticleCreate.aspx");
@@ -28,13 +29,13 @@ namespace TEST.Web.Views.Article
         {
             ArticleService articleService = new ArticleService();
             DataTable dt = articleService.GetAll();
-            GVArticles.DataSource = dt;
-            GVArticles.DataBind();
+            gvArticles.DataSource = dt;
+            gvArticles.DataBind();
         }
 
         protected void OnPageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            GVArticles.PageIndex = e.NewPageIndex;
+            gvArticles.PageIndex = e.NewPageIndex;
             this.BindGrid();
         }
 
@@ -48,7 +49,7 @@ namespace TEST.Web.Views.Article
 
         protected void gvArticle_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            Label getId = (Label)GVArticles.Rows[e.RowIndex].FindControl("lblArticleID");
+            Label getId = (Label)gvArticles.Rows[e.RowIndex].FindControl("lblArticleID");
             ArticleService articleService = new ArticleService();
             bool success = articleService.Delete(Convert.ToInt32(getId.Text));
             if(success)

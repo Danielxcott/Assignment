@@ -35,6 +35,7 @@ namespace TEST.DAO.Article
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
 
+
         public bool Insert(ArticleEntity articleEntity) {
                 strSql = "INSERT INTO Articles(Title,Slug,Description,Excerpt,CategoryId,CreatedAt)"+"VALUES (@Title,@Slug,@Description,@Excerpt,@CategoryId,@CreatedAt)";
             SqlParameter[] sqlParams = {
