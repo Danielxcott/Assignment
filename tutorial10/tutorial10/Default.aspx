@@ -15,7 +15,7 @@
             <asp:TextBox ID="txtPassword"  ValidationGroup="login"  CssClass="form-control" runat="server" PlaceHolder="Enter your password" TextMode="Password"></asp:TextBox>
             <asp:RequiredFieldValidator  ValidationGroup="login" ID="requirePasswordValidator" ControlToValidate="txtPassword" runat="server" ErrorMessage="Your password field is required! " ForeColor="Red"></asp:RequiredFieldValidator>
         </div>
-        <asp:Button ID="btnLogin" CssClass="btn btn-primary"  ValidationGroup="login"  style="margin:10px 0" runat="server" Text="Login" onClick="Login_Btn"/>
-        <asp:Button ID="btnForgot" CssClass="btn btn-secondary" runat="server" Text="Forgot password" onClick="Forget_Btn"/>
+        <asp:Button ID="btnLogin" CssClass="btn btn-primary"  ValidationGroup="login"  style="margin:10px 0" runat="server" Text="Login" onClick="LoginBtn"/>
+        <asp:Button ID="btnForgot" CssClass="btn btn-secondary" runat="server" Text="Forgot password" onClick="ForgetBtn"/>
 
 </asp:Content>

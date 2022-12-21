@@ -14,7 +14,7 @@ namespace tutorial10
         {
 
         }
-        protected void Login_Btn(object sender, EventArgs e)
+        protected void LoginBtn(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(Session["NcPassword"] as string))
             {
@@ -26,10 +26,10 @@ namespace tutorial10
                 Session["Email"] = "example@gmail.com";
                 Session["Password"] = Session["NcPassword"];
             }
-            var getemail = txtEmail.Text.ToString();
-            var getpwd = txtPassword.Text.ToString();
+            var email = txtEmail.Text.ToString();
+            var password = txtPassword.Text.ToString();
 
-            if (Convert.ToString(Session["Email"]) == getemail && Convert.ToString(Session["Password"]) == getpwd)
+            if (Convert.ToString(Session["Email"]) == email && Convert.ToString(Session["Password"]) == password)
             {
                 Response.Redirect("Home.aspx");
             }
@@ -40,7 +40,7 @@ namespace tutorial10
             }
         }
 
-        protected void Forget_Btn(object sender, EventArgs e)
+        protected void ForgetBtn(object sender, EventArgs e)
         {
             Response.Redirect("ResetPassword.aspx");
         }

@@ -14,7 +14,7 @@ namespace tutorial10
           
         }
 
-        protected void Change_Password(Object sender, EventArgs e)
+        protected void NewPassword(object sender, EventArgs e)
         {
             Session.Remove("Password");
             string newpassword = txtNPassword.Text.ToString();
@@ -25,9 +25,9 @@ namespace tutorial10
                 Response.Redirect("Default.aspx");
             }else
             {
-                ErrorMsg.InnerText = "Your new password and confirm password is not the same. Please, try again!";
-                ErrorMsg.Style.Add("display", "inline-block");
-                ErrorMsg.Style.Add("color", "Red");
+                errorMsg.InnerText = "Your new password and confirm password is not the same. Please, try again!";
+                errorMsg.Style.Add("display", "inline-block");
+                errorMsg.Style.Add("color", "Red");
                 txtNPassword.Text = String.Empty;
                 txtCPassword.Text = String.Empty;
             }

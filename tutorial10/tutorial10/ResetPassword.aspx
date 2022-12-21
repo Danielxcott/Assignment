@@ -5,5 +5,5 @@
     <asp:TextBox ID="txtEmail" CssClass="form-control" runat="server"></asp:TextBox>
     <asp:RequiredFieldValidator ControlToValidate="txtEmail" ID="requireEmailValidator" runat="server" ForeColor="Red" ErrorMessage="Input field required!"></asp:RequiredFieldValidator> <br />
      <asp:RegularExpressionValidator ID="checkingEmailFormat" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtEmail" ErrorMessage="Invalid Email Format" ForeColor="Red"></asp:RegularExpressionValidator> <br />
-    <asp:Button ID="btnRestPw" runat="server" CssClass="btn btn-primary" style="display:block;" Text="Send" OnClick="Reset_Btn"/>
+    <asp:Button ID="btnRestPw" runat="server" CssClass="btn btn-primary" style="display:block;" Text="Send" OnClick="ResetBtn"/>
 </asp:Content>

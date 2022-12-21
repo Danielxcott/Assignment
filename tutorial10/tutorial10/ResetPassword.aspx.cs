@@ -19,7 +19,7 @@ namespace tutorial10
 
         }
 
-        protected void Reset_Btn(object sender, EventArgs e)
+        protected void ResetBtn(object sender, EventArgs e)
         {
            string mail = txtEmail.Text.ToString();
             string body = string.Empty;

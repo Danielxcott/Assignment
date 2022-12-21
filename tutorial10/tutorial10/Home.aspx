@@ -7,5 +7,5 @@
     <asp:Label ID="lblEmail" runat="server" CssClass="mb-3" Text=""></asp:Label> <br />
     <span>Your password is: </span>
     <asp:Label ID="lblPassword" runat="server" CssClass="mb-3" Text=""></asp:Label> <br />
-    <asp:Button ID="btnLogout" CssClass="mt-3 btn btn-danger" runat="server" Text="Logout" OnClick="Logout_Btn" />
+    <asp:Button ID="btnLogout" CssClass="mt-3 btn btn-danger" runat="server" Text="Logout" OnClick="LogoutBtn" />
 </asp:Content>
