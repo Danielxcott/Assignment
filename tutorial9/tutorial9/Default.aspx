@@ -5,7 +5,7 @@
             <asp:FileUpload ID="fileUploadBox" runat="server" cssClass="form-input"/>
              <span runat="server" class="file-custom"></span>
     </label>
-        <asp:Button ID="btnUpload" runat="server" Text="Upload" CssClass="btn btn-primary mt-10" OnClick="Upload_Btn" />
+        <asp:Button ID="btnUpload" runat="server" Text="Upload" CssClass="btn btn-primary mt-10" OnClick="UploadBtn" />
      <asp:Label ID="lblErrorMsg" runat="server" style="display:none" ForeColor="Red" Text=""></asp:Label>
     <asp:RequiredFieldValidator ID="requireFileValidator" ControlToValidate="fileUploadBox" runat="server" ForeColor="Red" ErrorMessage="File needs to be required!"></asp:RequiredFieldValidator>
     <asp:GridView ID="gvList" CssClass="table" runat="server" style="margin-top:15px;"></asp:GridView>

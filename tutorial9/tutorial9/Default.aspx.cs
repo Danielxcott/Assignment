@@ -12,7 +12,7 @@ namespace tutorial9
         {
 
         }
-        protected void Upload_Btn(object sender, EventArgs e)
+        protected void UploadBtn(object sender, EventArgs e)
         {
             string fileextension = Path.GetExtension(fileUploadBox.PostedFile.FileName).ToLower();
             string filename = Path.GetFileName(fileUploadBox.FileName);
