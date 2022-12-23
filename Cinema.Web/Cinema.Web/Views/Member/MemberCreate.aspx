@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MemberCreate.aspx.cs" Inherits="Cinema.Web.Views.Member.MemberCreate" %>
+﻿<%@ Page Title="MOON | Create Member" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MemberCreate.aspx.cs" Inherits="Cinema.Web.Views.Member.MemberCreate" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <asp:HiddenField ID="hdnMemberId" runat="server" Value="0" />
     <div class="mt-3 row">

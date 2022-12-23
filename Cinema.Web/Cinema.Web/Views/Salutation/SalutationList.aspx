@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SalutationList.aspx.cs" Inherits="Cinema.Web.Views.Salutation.SalutationList" %>
+﻿<%@ Page Title="MOON | Salutations" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SalutationList.aspx.cs" Inherits="Cinema.Web.Views.Salutation.SalutationList" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
      <script src="../../Scripts/sweetalert.min.js"></script>
     <link href="../../Content/style.css" rel="stylesheet" />

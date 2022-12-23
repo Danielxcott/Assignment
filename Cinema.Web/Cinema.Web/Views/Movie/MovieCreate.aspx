@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MovieCreate.aspx.cs" Inherits="Cinema.Web.Views.Movie.MovieCreate" %>
+﻿<%@ Page Title="MOON | Create Movie" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MovieCreate.aspx.cs" Inherits="Cinema.Web.Views.Movie.MovieCreate" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
      <asp:HiddenField ID="hdnMovieId" runat="server" Value="0" />
     <div class="mt-3 row">

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MovieList.aspx.cs" Inherits="Cinema.Web.Views.Movie.MovieList" %>
+﻿<%@ Page Title="MOON | Movies" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MovieList.aspx.cs" Inherits="Cinema.Web.Views.Movie.MovieList" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
          <script src="../../Scripts/sweetalert.min.js"></script>
     <link href="../../Content/style.css" rel="stylesheet" />
