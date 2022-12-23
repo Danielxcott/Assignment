@@ -1,0 +1,11 @@
+C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.Services\bin\Debug\Cinema.Services.dll
+C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.Services\bin\Debug\Cinema.Services.pdb
+C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.Services\bin\Debug\Cinema.DAO.dll
+C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.Services\bin\Debug\Cinema.Entities.dll
+C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.Services\bin\Debug\Cinema.DAO.pdb
+C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.Services\bin\Debug\Cinema.Entities.pdb
+C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.Services\obj\Debug\Cinema.Services.csproj.AssemblyReference.cache
+C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.Services\obj\Debug\Cinema.Services.csproj.CoreCompileInputs.cache
+C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.Services\obj\Debug\Cinema.Services.csproj.CopyComplete
+C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.Services\obj\Debug\Cinema.Services.dll
+C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.Services\obj\Debug\Cinema.Services.pdb

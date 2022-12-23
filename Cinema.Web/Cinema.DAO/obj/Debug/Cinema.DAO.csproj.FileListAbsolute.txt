@@ -1,0 +1,9 @@
+C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.DAO\bin\Debug\Cinema.DAO.dll
+C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.DAO\bin\Debug\Cinema.DAO.pdb
+C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.DAO\bin\Debug\Cinema.Entities.dll
+C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.DAO\bin\Debug\Cinema.Entities.pdb
+C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.DAO\obj\Debug\Cinema.DAO.csproj.AssemblyReference.cache
+C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.DAO\obj\Debug\Cinema.DAO.csproj.CoreCompileInputs.cache
+C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.DAO\obj\Debug\Cinema.DAO.csproj.CopyComplete
+C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.DAO\obj\Debug\Cinema.DAO.dll
+C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.DAO\obj\Debug\Cinema.DAO.pdb
