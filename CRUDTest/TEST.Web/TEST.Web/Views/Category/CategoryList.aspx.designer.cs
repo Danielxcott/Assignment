@@ -15,13 +15,13 @@ namespace TEST.Web.Views.Category
     {
 
         /// <summary>
-        /// btnCreate control.
+        /// lnkBtnCreate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnCreate;
+        protected global::System.Web.UI.WebControls.LinkButton lnkBtnCreate;
 
         /// <summary>
         /// gvCategory control.

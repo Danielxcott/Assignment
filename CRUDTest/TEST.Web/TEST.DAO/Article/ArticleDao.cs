@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TEST.DAO.Common;
 using TEST.Entities.Article;
 
@@ -16,14 +11,10 @@ namespace TEST.DAO.Article
 
         private string strSql = string.Empty;
 
-        private DataTable resultDataTable = new DataTable();
-
-        private int existCount;
-
         public DataTable GetAll()
         {
-            strSql = "SELECT a.ArticleId, c.Name, a.Title, a.Slug, a.Description, a.Excerpt, a.CreatedAt";
-            strSql += " FROM Articles a INNER JOIN Categories c on a.CategoryId = c.CategoryId";
+            strSql = "SELECT Articles.ArticleId, Categories.Name, Articles.Title, Articles.Slug, Articles.Description, Articles.Excerpt, Articles.CreatedAt";
+            strSql += " FROM Articles INNER JOIN Categories on Articles.CategoryId = Categories.CategoryId";
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
 
@@ -34,7 +25,6 @@ namespace TEST.DAO.Article
 
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
-
 
         public bool Insert(ArticleEntity articleEntity) {
                 strSql = "INSERT INTO Articles(Title,Slug,Description,Excerpt,CategoryId,CreatedAt)"+"VALUES (@Title,@Slug,@Description,@Excerpt,@CategoryId,@CreatedAt)";

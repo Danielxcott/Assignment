@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using TEST.Services.Article;
 
@@ -19,8 +15,7 @@ namespace TEST.Web.Views.Article
             }
         }
 
-
-        protected void LnkBtn_Create(object sender, EventArgs e)
+        protected void LnkBtnCreate(object sender, EventArgs e)
         {
             Response.Redirect("~/Views/Article/ArticleCreate.aspx");
         }
@@ -39,7 +34,7 @@ namespace TEST.Web.Views.Article
             this.BindGrid();
         }
 
-        protected void gvArticle_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void gvArticleRowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "Edit")
             {
@@ -47,7 +42,7 @@ namespace TEST.Web.Views.Article
             }
         }
 
-        protected void gvArticle_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        protected void gvArticleRowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             Label getId = (Label)gvArticles.Rows[e.RowIndex].FindControl("lblArticleID");
             ArticleService articleService = new ArticleService();

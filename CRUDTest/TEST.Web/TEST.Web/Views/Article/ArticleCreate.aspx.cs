@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 using System.Text.RegularExpressions;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using TEST.Entities.Article;
 using TEST.Services.Article;
 using TEST.Services.Category;
-using TEST.Web.Views.Category;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace TEST.Web.Views.Article
 {
@@ -30,12 +25,12 @@ namespace TEST.Web.Views.Article
             }
         }
 
-        protected void SaveBtn_Click(object sender, EventArgs e)
+        protected void SaveBtnClick(object sender, EventArgs e)
         {
                 AddOrUpdate();
         }
 
-        protected void CancelBtn_Click(object sender, EventArgs e)
+        protected void CancelBtnClick(object sender, EventArgs e)
         {
             Response.Redirect("~/Views/Article/ArticleList.aspx");
         }
@@ -49,7 +44,6 @@ namespace TEST.Web.Views.Article
                 txtArticleTtl.Text = dt.Rows[0]["Title"].ToString();
                 txtArticleSlug.Text = dt.Rows[0]["Slug"].ToString();
                 txtArticleDescribe.Text = dt.Rows[0]["Description"].ToString();
-                txtArticleCreated.Text = Convert.ToDateTime(dt.Rows[0]["CreatedAt"]).ToString("dd/MM/yyyy");
                 ddlCategory.SelectedValue = dt.Rows[0]["CategoryId"].ToString();
             }
         }
@@ -96,9 +90,15 @@ namespace TEST.Web.Views.Article
             articleEntity.Slug = GetSlug(txtArticleSlug.Text.ToString());
             articleEntity.Description = txtArticleDescribe.Text.ToString();
             articleEntity.Excerpt = GetExcerpt(txtArticleDescribe.Text.ToString());
-            string[] date = txtArticleCreated.Text.Split('/');
-            articleEntity.CreatedAt = Convert.ToDateTime(date[2] + "-" + date[1] + "-" + date[0]);
+            articleEntity.CreatedAt = DateTime.ParseExact(this.GetDate(),"dd-MM-yyyy",null);
             return articleEntity;
+        }
+
+        private string GetDate()
+        {
+           var now = DateTime.Now;
+            var currentdate = now.ToString("dd-MM-yyyy");
+            return currentdate;
         }
 
         private string GetSlug(string text)

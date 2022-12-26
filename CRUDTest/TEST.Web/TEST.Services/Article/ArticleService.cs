@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 using TEST.DAO.Article;
 using TEST.Entities.Article;
 
@@ -20,7 +15,6 @@ namespace TEST.Services.Article
             DataTable dt = articleDao.GetAll();
             return dt;
         }
-
 
         /// <summary>
         /// Get.

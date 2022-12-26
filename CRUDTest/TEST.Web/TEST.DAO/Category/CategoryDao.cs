@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TEST.DAO.Common;
 using TEST.Entities.Category;
 
@@ -13,11 +8,12 @@ namespace TEST.DAO.Category
     public class CategoryDao
     {
         private DbConnection connection = new DbConnection();
+
         private string strSql = string.Empty;
 
         public DataTable GetAll()
         {
-            strSql = "SELECT * FROM Categories ORDER BY Name DESC";
+            strSql = "SELECT * FROM Categories";
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
 

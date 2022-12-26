@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using TEST.Services.Category;
 
@@ -18,7 +14,7 @@ namespace TEST.Web.Views.Category
                 BindGrid();
             }
         }
-        protected void LnkBtn_Create(object sender, EventArgs e)
+        protected void LnkBtnCreate(object sender, EventArgs e)
         {
             Response.Redirect("~/Views/Category/CategoryCreate.aspx");
         }
@@ -31,7 +27,7 @@ namespace TEST.Web.Views.Category
             gvCategory.DataBind();
         }
 
-        protected void gvCategory_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void gvCategoryRowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "Edit")
             {
@@ -39,7 +35,7 @@ namespace TEST.Web.Views.Category
             }
         }
 
-        protected void gvCategory_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        protected void gvCategoryRowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             Label getId = (Label)gvCategory.Rows[e.RowIndex].FindControl("lblCategoryID");
             CategoryService categoryService = new CategoryService();

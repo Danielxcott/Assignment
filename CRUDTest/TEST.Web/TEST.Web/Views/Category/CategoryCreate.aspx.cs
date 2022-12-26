@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 using System.Text.RegularExpressions;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using TEST.Entities.Category;
-using TEST.Services.Article;
 using TEST.Services.Category;
-using TEST.Web.Views.Article;
 
 namespace TEST.Web.Views.Category
 {
@@ -27,13 +20,12 @@ namespace TEST.Web.Views.Category
                 }
             }
         }
-
-        protected void SaveBtn_Click(object sender, EventArgs e)
+        protected void SaveBtnClick(object sender, EventArgs e)
         {
             AddOrUpdate();
         }
 
-        protected void CancelBtn_Click(object sender, EventArgs e) 
+        protected void CancelBtnClick(object sender, EventArgs e) 
         {
             Response.Redirect("~/Views/Category/CategoryList.aspx");
         }
@@ -46,7 +38,6 @@ namespace TEST.Web.Views.Category
             {
                 txtName.Text = dt.Rows[0]["Name"].ToString();
                 txtSlug.Text = dt.Rows[0]["Slug"].ToString();
-                txtCreatedAt.Text = Convert.ToDateTime(dt.Rows[0]["CreatedAt"]).ToString("dd/MM/yyyy");
             }
         }
 
@@ -75,10 +66,17 @@ namespace TEST.Web.Views.Category
             categoryEntity.CategoryId = Convert.ToInt32(hdnCategoryId.Value);
             categoryEntity.Name = txtName.Text.ToString();
             categoryEntity.Slug = GetSlug(txtSlug.Text.ToString());
-            string[] date = txtCreatedAt.Text.Split('/');
-            categoryEntity.CreatedAt = Convert.ToDateTime(date[2] + "-" + date[1] + "-" + date[0]);
+            categoryEntity.CreatedAt = DateTime.ParseExact(this.GetDate(), "dd-MM-yyyy", null);
             return categoryEntity;
         }
+
+        private string GetDate()
+        {
+            var now = DateTime.Now;
+            var currentdate = now.ToString("dd-MM-yyyy");
+            return currentdate;
+        }
+
         private string GetSlug(string text)
         {
             string slug = text.ToLower();

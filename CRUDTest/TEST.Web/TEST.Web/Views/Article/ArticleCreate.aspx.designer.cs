@@ -96,33 +96,6 @@ namespace TEST.Web.Views.Article
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requireCategoryValidator;
 
         /// <summary>
-        /// txtArticleCreated control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtArticleCreated;
-
-        /// <summary>
-        /// requireDateValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator requireDateValidator;
-
-        /// <summary>
-        /// validateDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator validateDate;
-
-        /// <summary>
         /// btnSave control.
         /// </summary>
         /// <remarks>
@@ -132,12 +105,12 @@ namespace TEST.Web.Views.Article
         protected global::System.Web.UI.WebControls.Button btnSave;
 
         /// <summary>
-        /// btnCancel control.
+        /// lnkBtnCancel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnCancel;
+        protected global::System.Web.UI.WebControls.LinkButton lnkBtnCancel;
     }
 }
