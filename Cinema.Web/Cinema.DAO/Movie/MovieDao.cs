@@ -27,7 +27,7 @@ namespace Cinema.DAO.Movie
         }
         public int Exist(MovieEntity movieEntity)
         {
-            strSql = "SELECT Count(MoviesRented) FROM Movies WHERE MoviesRented = " + "@MoviesRented";
+            strSql = "SELECT COUNT(MoviesRented) FROM Movies WHERE MoviesRented = " + "@MoviesRented";
             SqlParameter[] sqlParams = {
                 new SqlParameter("@MoviesRented",movieEntity.MoviesRented),
             };

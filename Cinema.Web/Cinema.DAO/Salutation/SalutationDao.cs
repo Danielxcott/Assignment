@@ -31,7 +31,7 @@ namespace Cinema.DAO.Salutation
 
         public int Exist(SalutationEntity salutationEntity)
         {
-            strSql = "SELECT * FROM Salutations " +
+            strSql = "SELECT COUNT(Salutation) FROM Salutations " +
                       "WHERE Salutation = " + "@Salutation";
             SqlParameter[] sqlParams = {
                 new SqlParameter("@Salutation",salutationEntity.Salutation),
