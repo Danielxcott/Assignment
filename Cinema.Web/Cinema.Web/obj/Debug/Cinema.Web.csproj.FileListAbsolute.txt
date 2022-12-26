@@ -78,3 +78,7 @@ C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.Web\bin\Cinema.Services.d
 C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.Web\bin\Cinema.DAO.pdb
 C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.Web\bin\Cinema.Entities.pdb
 C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.Web\bin\Cinema.Services.pdb
+C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.Web\bin\Microsoft.Configuration.ConfigurationBuilders.Base.dll
+C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.Web\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.dll
+C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.Web\bin\Microsoft.Configuration.ConfigurationBuilders.Base.xml
+C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.Web\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.xml

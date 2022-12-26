@@ -29,6 +29,16 @@ namespace Cinema.DAO.Salutation
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
 
+        public int Exist(SalutationEntity salutationEntity)
+        {
+            strSql = "SELECT * FROM Salutations " +
+                      "WHERE Salutation = " + "@Salutation";
+            SqlParameter[] sqlParams = {
+                new SqlParameter("@Salutation",salutationEntity.Salutation),
+            };
+            return Convert.ToInt32(connection.ExecuteScalar(CommandType.Text, strSql, sqlParams));
+        }
+
         public bool Insert(SalutationEntity salutationEntity)
         {
             strSql = "INSERT INTO Salutations (Salutation)" + "VALUES (@Salutation)";

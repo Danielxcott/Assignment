@@ -1,5 +1,7 @@
 ﻿using Cinema.Entities.Movie;
+using Cinema.Entities.Salutation;
 using Cinema.Services.Movie;
+using Cinema.Services.Salutation;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -52,7 +54,19 @@ namespace Cinema.Web.Views.Movie
             bool success = false;
             if (hdnMovieId.Value == "0")
             {
-                success = movieService.Insert(movieEntity);
+
+                int exist = movieService.Exist(movieEntity);
+                if (exist > 0)
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Movie name had already existed in the lists, please write differ movie name.');", true);
+                    btnSave.Enabled = false;
+                }
+                else
+                {
+                    success = movieService.Insert(movieEntity);
+                    btnSave.Enabled = true;
+                }
+                btnSave.Enabled = true;
             }
             else
             {

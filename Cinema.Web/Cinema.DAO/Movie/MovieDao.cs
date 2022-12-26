@@ -25,6 +25,15 @@ namespace Cinema.DAO.Movie
             strSql = "SELECT * FROM Movies WHERE MovieId = " + id;
             return connection.ExecuteDataTable (CommandType.Text, strSql);
         }
+        public int Exist(MovieEntity movieEntity)
+        {
+            strSql = "SELECT Count(MoviesRented) FROM Movies WHERE MoviesRented = " + "@MoviesRented";
+            SqlParameter[] sqlParams = {
+                new SqlParameter("@MoviesRented",movieEntity.MoviesRented),
+            };
+            return Convert.ToInt32(connection.ExecuteScalar(CommandType.Text, strSql, sqlParams));
+        }
+
 
         public bool Insert(MovieEntity movieEntity)
         {

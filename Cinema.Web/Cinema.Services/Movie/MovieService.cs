@@ -25,6 +25,12 @@ namespace Cinema.Services.Movie
             return dt;
         }
 
+        public int Exist(MovieEntity movieEntity)
+        {
+            int exist = movieDao.Exist(movieEntity);
+            return exist;
+        }
+
         public bool Insert(MovieEntity movieEntity)
         {
             return movieDao.Insert(movieEntity);

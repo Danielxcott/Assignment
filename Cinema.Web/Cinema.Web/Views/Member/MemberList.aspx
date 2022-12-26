@@ -3,15 +3,19 @@
     <script src="../../Scripts/sweetalert.min.js"></script>
     <link href="../../Content/style.css" rel="stylesheet" />
      <div class="row mt-3">
-           <div class="col-md-6">
-               <asp:LinkButton ID="lnkBtnCreate" CssClass="btn btn-primary" OnClick="LnkBtnCreate" runat="server">Create</asp:LinkButton>
+           <div class="col-md-9">
+               <div class="row">
+                    <div class="col-3">
+                    <asp:LinkButton ID="lnkBtnCreate" CssClass="btn btn-primary" OnClick="LnkBtnCreate" runat="server">Create</asp:LinkButton>
+                    </div>
+               <div class="col-6">
+                    <div class="input-group">
+                     <asp:TextBox ID="txtSearch" CssClass="form-control" runat="server" TextMode="Search"></asp:TextBox>
+                    <asp:Button ID="btnSearch" runat="server" CssClass="btn btn-outline-secondary" Text="Search" onClick="SearchBtn"/>
+                    </div>
+                </div>
+               </div>
            </div>
-    <div class="col-md-6">
-        <div class="input-group">
-         <asp:TextBox ID="txtSearch" CssClass="form-control" runat="server" TextMode="Search"></asp:TextBox>
-        <asp:Button ID="btnSearch" runat="server" CssClass="btn btn-outline-secondary" Text="Search" onClick="SearchBtn"/>
-        </div>
-    </div>
      </div>
     <asp:GridView ID="gvMember" runat="server" CssClass="table table-bordered table-striped mt-3" AutoGenerateColumns="false" OnRowCommand="gvMemberRowCommand" OnRowDeleting="gvMemberRowDeleting"  AllowPaging="true"
     OnPageIndexChanging="OnPageIndexChanging" PageSize="8">

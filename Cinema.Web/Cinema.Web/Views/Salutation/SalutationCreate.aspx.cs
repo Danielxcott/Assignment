@@ -53,7 +53,18 @@ namespace Cinema.Web.Views.Salutation
             bool success = false;
             if (hdnSalutationId.Value == "0")
             {
-                success = salutationService.Insert(salutationEntity);
+                int exist = salutationService.Exist(salutationEntity);
+                if(exist > 0)
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Type of Salutation had already existed in the lists, please write differ salutation.');", true);
+                    btnSave.Enabled = false;
+               }
+                else
+                {
+                    success = salutationService.Insert(salutationEntity);
+                    btnSave.Enabled = true;
+                }
+                btnSave.Enabled = true;
             }
             else
             {
@@ -68,9 +79,9 @@ namespace Cinema.Web.Views.Salutation
         private SalutationEntity CreateData()
         {
             SalutationEntity salutationEntity = new SalutationEntity();
-            salutationEntity.SalutationId = Convert.ToInt32(hdnSalutationId.Value);
-            salutationEntity.Salutation = txtSalutation.Text.ToString();
-            return salutationEntity;
+                salutationEntity.SalutationId = Convert.ToInt32(hdnSalutationId.Value);
+                salutationEntity.Salutation = txtSalutation.Text.ToString();
+                return salutationEntity;
         }
     }
 }

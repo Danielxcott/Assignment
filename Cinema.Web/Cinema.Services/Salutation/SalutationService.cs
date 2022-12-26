@@ -25,6 +25,12 @@ namespace Cinema.Services.Salutation
             return dt;
         }
 
+        public int Exist(SalutationEntity salutationEntity)
+        {
+            int count = salutationDao.Exist(salutationEntity);
+            return count;
+        }
+
         public bool Insert(SalutationEntity salutationEntity)
         {
             return salutationDao.Insert(salutationEntity);
