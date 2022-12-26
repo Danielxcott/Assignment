@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Cinema.DAO.Common;
 using Cinema.Entities.Salutation;
 
@@ -13,6 +9,7 @@ namespace Cinema.DAO.Salutation
     public class SalutationDao
     {
         private DbConnection connection = new DbConnection();
+
         private string strSql = string.Empty;
 
         public DataTable GetAll()

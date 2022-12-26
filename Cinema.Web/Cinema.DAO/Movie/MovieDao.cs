@@ -1,18 +1,15 @@
 ﻿using Cinema.DAO.Common;
 using Cinema.Entities.Movie;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Cinema.DAO.Movie
 {
     public class MovieDao
     {
         DbConnection connection = new DbConnection();
+
         private string strSql = string.Empty;
 
         public DataTable GetAll()
@@ -25,6 +22,7 @@ namespace Cinema.DAO.Movie
             strSql = "SELECT * FROM Movies WHERE MovieId = " + id;
             return connection.ExecuteDataTable (CommandType.Text, strSql);
         }
+
         public int Exist(MovieEntity movieEntity)
         {
             strSql = "SELECT COUNT(MoviesRented) FROM Movies WHERE MoviesRented = " + "@MoviesRented";
@@ -33,7 +31,6 @@ namespace Cinema.DAO.Movie
             };
             return Convert.ToInt32(connection.ExecuteScalar(CommandType.Text, strSql, sqlParams));
         }
-
 
         public bool Insert(MovieEntity movieEntity)
         {

@@ -1,12 +1,7 @@
 ﻿using Cinema.DAO.Common;
 using Cinema.Entities.Member;
-using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Cinema.DAO.Member
 {
@@ -17,9 +12,9 @@ namespace Cinema.DAO.Member
 
         public DataTable GetAll()
         {
-            strSql = "SELECT m.MemberId, m.FullName, m.Address, mo.MoviesRented, s.Salutation";
-            strSql += " FROM Members m INNER JOIN Movies mo ON m.MovieId = mo.MovieId";
-            strSql += " INNER JOIN Salutations s ON m.SalutationId = s.SalutationId";
+            strSql = "SELECT Members.MemberId, Members.FullName, Members.Address, Movies.MoviesRented, Salutations.Salutation";
+            strSql += " FROM Members INNER JOIN Movies ON Members.MovieId = Movies.MovieId";
+            strSql += " INNER JOIN Salutations ON Members.SalutationId = Salutations.SalutationId";
 
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
@@ -32,9 +27,9 @@ namespace Cinema.DAO.Member
 
         public DataTable Search(string keyword)
         {
-            strSql = "SELECT m.MemberId, m.FullName, m.Address, mo.MoviesRented, s.Salutation";
-            strSql += " FROM Members m INNER JOIN Movies mo ON m.MovieId = mo.MovieId";
-            strSql += " INNER JOIN Salutations s ON m.SalutationId = s.SalutationId WHERE m.FullName LIKE '%" + keyword + "%' OR mo.MoviesRented LIKE '%" + keyword + "%'";
+            strSql = "SELECT Members.MemberId, Members.FullName, Members.Address, Movies.MoviesRented, Salutations.Salutation";
+            strSql += " FROM Members INNER JOIN Movies ON Members.MovieId = Movies.MovieId";
+            strSql += " INNER JOIN Salutations ON Members.SalutationId = Salutations.SalutationId WHERE Members.FullName LIKE '%" + keyword + "%' OR Movies.MoviesRented LIKE '%" + keyword + "%'";
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
 

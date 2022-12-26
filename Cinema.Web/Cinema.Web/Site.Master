@@ -58,7 +58,8 @@
           <a class="nav-link text-light" runat="server" href="~/Views/Salutation/SalutationList.aspx">Salutaions</a>
         </li>
           </ul>
-        
+        </div>
+      </div>
 </nav>
        
         <div class="container body-content">

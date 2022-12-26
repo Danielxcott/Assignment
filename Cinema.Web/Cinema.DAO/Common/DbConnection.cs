@@ -3,9 +3,7 @@ using System;
 using System.Data;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.IO;
 using System.Data.SqlClient;
-using System.Runtime.Remoting.Messaging;
 
 namespace Cinema.DAO.Common
 {

@@ -1,13 +1,8 @@
 ﻿using Cinema.Entities.Salutation;
 using Cinema.Services.Salutation;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Xml.Linq;
 
 namespace Cinema.Web.Views.Salutation
 {
