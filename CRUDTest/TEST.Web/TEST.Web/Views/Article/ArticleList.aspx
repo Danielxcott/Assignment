@@ -10,11 +10,12 @@
     <asp:GridView ID="gvArticles" runat="server" CssClass="table table-bordered table-striped mt-3" AutoGenerateColumns="false" OnRowCommand="gvArticleRowCommand" OnRowDeleting="gvArticleRowDeleting" AllowPaging="true"
     OnPageIndexChanging="OnPageIndexChanging" PageSize="8">
         <Columns>
-            <asp:TemplateField HeaderText="#">
-                <ItemTemplate>
-                   <asp:Label ID="lblArticleID" runat="server" Text='<%# Eval("ArticleId") %>' ></asp:Label>
+             <asp:TemplateField HeaderText="No">
+                <ItemTemplate>    
+                    <%#Container.DataItemIndex+1 %>    
+                    <asp:Label Visible="false" ID="lblArticleID" runat="server" Text='<%# Eval("ArticleId") %>' ></asp:Label>
                 </ItemTemplate>
-            </asp:TemplateField>
+                </asp:TemplateField>
             <asp:TemplateField HeaderText="Category Name">
                 <ItemTemplate>
                    <asp:Label ID="lblCategoryName" runat="server" Text='<%# Eval("Name") %>' ></asp:Label>

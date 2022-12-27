@@ -8,11 +8,12 @@
      </div>
     <asp:GridView ID="gvCategory" runat="server" CssClass="table table-bordered table-striped mt-3" AutoGenerateColumns="false" OnRowCommand="gvCategoryRowCommand" OnRowDeleting="gvCategoryRowDeleting">
         <Columns>
-            <asp:TemplateField HeaderText="#">
-                <ItemTemplate>
-                   <asp:Label ID="lblCategoryID" runat="server" Text='<%# Eval("CategoryId") %>' ></asp:Label>
+             <asp:TemplateField HeaderText="No">
+                <ItemTemplate>    
+                    <%#Container.DataItemIndex+1 %>    
+                   <asp:Label Visible="false" ID="lblCategoryID" runat="server" Text='<%# Eval("CategoryId") %>' ></asp:Label>
                 </ItemTemplate>
-            </asp:TemplateField>
+                </asp:TemplateField>
             <asp:TemplateField HeaderText="Name">
                 <ItemTemplate>
                    <asp:Label ID="lblName" runat="server" Text='<%# Eval("Name") %>' ></asp:Label>
