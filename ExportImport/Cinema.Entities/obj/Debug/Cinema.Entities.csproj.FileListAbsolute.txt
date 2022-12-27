@@ -1,0 +1,12 @@
+C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.Entities\bin\Debug\Cinema.Entities.dll
+C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.Entities\bin\Debug\Cinema.Entities.pdb
+C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.Entities\obj\Debug\Cinema.Entities.csproj.AssemblyReference.cache
+C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.Entities\obj\Debug\Cinema.Entities.csproj.CoreCompileInputs.cache
+C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.Entities\obj\Debug\Cinema.Entities.dll
+C:\Users\TheinZan\Desktop\assignment\Cinema.Web\Cinema.Entities\obj\Debug\Cinema.Entities.pdb
+C:\Users\TheinZan\Desktop\Cinema.Web\Cinema.Entities\bin\Debug\Cinema.Entities.dll
+C:\Users\TheinZan\Desktop\Cinema.Web\Cinema.Entities\bin\Debug\Cinema.Entities.pdb
+C:\Users\TheinZan\Desktop\Cinema.Web\Cinema.Entities\obj\Debug\Cinema.Entities.csproj.AssemblyReference.cache
+C:\Users\TheinZan\Desktop\Cinema.Web\Cinema.Entities\obj\Debug\Cinema.Entities.csproj.CoreCompileInputs.cache
+C:\Users\TheinZan\Desktop\Cinema.Web\Cinema.Entities\obj\Debug\Cinema.Entities.dll
+C:\Users\TheinZan\Desktop\Cinema.Web\Cinema.Entities\obj\Debug\Cinema.Entities.pdb
