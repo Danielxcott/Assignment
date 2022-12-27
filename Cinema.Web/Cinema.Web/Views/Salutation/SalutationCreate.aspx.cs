@@ -45,10 +45,10 @@ namespace Cinema.Web.Views.Salutation
         {
             SalutationService salutationService = new SalutationService();
             SalutationEntity salutationEntity = CreateData();
+            int exist = salutationService.Exist(salutationEntity);
             bool success = false;
             if (hdnSalutationId.Value == "0")
             {
-                int exist = salutationService.Exist(salutationEntity);
                 if(exist > 0)
                 {
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Type of Salutation had already existed in the lists, please write differ salutation.');", true);
@@ -63,7 +63,17 @@ namespace Cinema.Web.Views.Salutation
             }
             else
             {
-                success = salutationService.Update(salutationEntity);
+                if (exist > 0)
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Type of Salutation had already existed in the lists, please write differ salutation.');", true);
+                    btnSave.Enabled = false;
+                }
+                else
+                {
+                    success = salutationService.Update(salutationEntity);
+                    btnSave.Enabled = true;
+                }
+                btnSave.Enabled = true;
             }
             if (success)
             {

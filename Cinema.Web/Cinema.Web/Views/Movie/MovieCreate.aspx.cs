@@ -45,11 +45,12 @@ namespace Cinema.Web.Views.Movie
         {
             MovieService movieService = new MovieService();
             MovieEntity movieEntity = CreateData();
+            int exist = movieService.Exist(movieEntity);
             bool success = false;
+
             if (hdnMovieId.Value == "0")
             {
 
-                int exist = movieService.Exist(movieEntity);
                 if (exist > 0)
                 {
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Movie name had already existed in the lists, please write differ movie name.');", true);
@@ -64,7 +65,17 @@ namespace Cinema.Web.Views.Movie
             }
             else
             {
-                success = movieService.Update(movieEntity);
+                if (exist > 0)
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Movie name had already existed in the lists, please write differ movie name.');", true);
+                    btnSave.Enabled = false;
+                }
+                else
+                {
+                    success = movieService.Update(movieEntity);
+                    btnSave.Enabled = true;
+                }
+                btnSave.Enabled = true;
             }
 
             if (success)

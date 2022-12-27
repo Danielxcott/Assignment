@@ -55,7 +55,7 @@
           <a class="nav-link text-light"  runat="server" href="~/Views/Movie/MovieList.aspx">Movies</a>
         </li>
           <li class="nav-item">
-          <a class="nav-link text-light" runat="server" href="~/Views/Salutation/SalutationList.aspx">Salutaions</a>
+          <a class="nav-link text-light" runat="server" href="~/Views/Salutation/SalutationList.aspx">Salutations</a>
         </li>
           </ul>
         </div>

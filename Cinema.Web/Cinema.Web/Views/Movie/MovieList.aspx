@@ -10,9 +10,10 @@
     <asp:GridView ID="gvMovie" runat="server" CssClass="table table-bordered table-striped mt-3" AutoGenerateColumns="false" OnRowCommand="gvMovieRowCommand" OnRowDeleting="gvMovieRowDeleting" AllowPaging="true"
     OnPageIndexChanging="OnPageIndexChanging" PageSize="8">
         <Columns>
-            <asp:TemplateField HeaderText="#">
+            <asp:TemplateField HeaderText="No">
                 <ItemTemplate>
-                   <asp:Label ID="lblMovieID" runat="server" Text='<%# Eval("MovieId") %>' ></asp:Label>
+                    <%#Container.DataItemIndex+1 %>  
+                   <asp:Label Visible="false" ID="lblMovieID" runat="server" Text='<%# Eval("MovieId") %>' ></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Salutation">

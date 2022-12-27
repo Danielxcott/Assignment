@@ -20,9 +20,10 @@
     <asp:GridView ID="gvMember" runat="server" CssClass="table table-bordered table-striped mt-3" AutoGenerateColumns="false" OnRowCommand="gvMemberRowCommand" OnRowDeleting="gvMemberRowDeleting"  AllowPaging="true"
     OnPageIndexChanging="OnPageIndexChanging" PageSize="8">
         <Columns>
-             <asp:TemplateField HeaderText="#">
+             <asp:TemplateField HeaderText="No">
                 <ItemTemplate>
-                   <asp:Label ID="lblMemberID" runat="server" Text='<%# Eval("MemberId") %>' ></asp:Label>
+                   <%#Container.DataItemIndex+1 %>  
+                   <asp:Label Visible="false" ID="lblMemberID" runat="server" Text='<%# Eval("MemberId") %>' ></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Full Name">

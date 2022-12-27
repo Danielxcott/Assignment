@@ -47,11 +47,6 @@
     <Compile Include="Salutation\SalutationEntity.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Scripts\sweetalert-dev.js" />
-    <Content Include="Scripts\sweetalert.min.js" />
-    <Content Include="Styles\sweetalert.css" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
