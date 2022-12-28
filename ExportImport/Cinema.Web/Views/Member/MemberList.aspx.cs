@@ -1,5 +1,6 @@
 ﻿using Cinema.Entities.Member;
 using Cinema.Services.Member;
+using Microsoft.Ajax.Utilities;
 using OfficeOpenXml;
 using System;
 using System.Data;
@@ -44,7 +45,8 @@ namespace Cinema.Web.Views.Member
         {
             MemberService memberService = new MemberService();
             DataTable dt = memberService.GetExport();
-            var filepath = @"C:\Users\TheinZan\Desktop\assignment\ExportImport\Cinema.Web\Files\member.xlsx";
+
+            var filepath = Server.MapPath("~/Files/")+"member.xlsx";
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             using (ExcelPackage excelPackage = new ExcelPackage())
             {
