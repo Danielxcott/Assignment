@@ -1,12 +1,9 @@
 ﻿using Cinema.Entities.Member;
 using Cinema.Services.Member;
-using Microsoft.Ajax.Utilities;
 using OfficeOpenXml;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.IO;
-using System.Web.Services.Description;
 using System.Web.UI.WebControls;
 
 namespace Cinema.Web.Views.Member
@@ -47,7 +44,7 @@ namespace Cinema.Web.Views.Member
         {
             MemberService memberService = new MemberService();
             DataTable dt = memberService.GetExport();
-            var filepath = @"C:\Users\TheinZan\Desktop\Cinema.Web\Cinema.Web\Files\member.xlsx";
+            var filepath = @"C:\Users\TheinZan\Desktop\assignment\ExportImport\Cinema.Web\Files\member.xlsx";
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             using (ExcelPackage excelPackage = new ExcelPackage())
             {
@@ -81,6 +78,7 @@ namespace Cinema.Web.Views.Member
                 int rowno = excelWorksheet.Dimension.End.Row;
                 MemberEntity memberEntity = new MemberEntity();
                 MemberService memberService = new MemberService();
+
                 for (int i = 2; i <= rowno; i++)
                 {
                         memberEntity.MemberId = Convert.ToInt32(excelWorksheet.Cells[i, 1].Value);
