@@ -8,6 +8,7 @@ using System;
 using System.Web.UI;
 using Cinema.Services.Movie;
 using Cinema.Services.Salutation;
+using System.Text.RegularExpressions;
 
 namespace Cinema.Web.Views.Member
 {
@@ -45,7 +46,6 @@ namespace Cinema.Web.Views.Member
 
         protected void LnkExportBtn(object sender, EventArgs e)
         {
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Excel file is successfully exported.');", true);
             MemberService memberService = new MemberService();
             DataTable dt = memberService.GetExport();
             var filepath = Server.MapPath("~/Files/") + "member.xlsx";
@@ -75,7 +75,11 @@ namespace Cinema.Web.Views.Member
         protected void LnkImportBtn(object sender, EventArgs e)
         {
             string filename = Path.GetFileName(fuldImport.FileName);
-            string path = Server.MapPath("~/Files/") + filename;
+            filename = filename.Replace(".xlsx", string.Empty);
+            var check = Regex.Replace(filename, "[^0-9A-Za-z _-]", string.Empty);
+            check = Regex.Replace(check, @"\s+", string.Empty);
+            check = Regex.Replace(check, @"[\d-]", string.Empty)+".xlsx";
+            string path = Server.MapPath("~/Files/") + check;
             string filepath = Path.GetFullPath(path);
             ImportExcel(filepath);
         }
@@ -83,10 +87,9 @@ namespace Cinema.Web.Views.Member
         private void ImportExcel(string filepath)
         {
             FileInfo fileInfo = new FileInfo(filepath);
-
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             using (ExcelPackage excelPackage = new ExcelPackage(fileInfo))
             {
-                ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
                 ExcelWorksheet excelWorksheet = excelPackage.Workbook.Worksheets[0];
                 int rowno = excelWorksheet.Dimension.End.Row;
                 MemberEntity memberEntity = new MemberEntity();

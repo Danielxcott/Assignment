@@ -85,7 +85,7 @@
           <asp:RegularExpressionValidator 
      ID="regexFileValidation" ValidationGroup="importValidate" ForeColor="Red" runat="server" ControlToValidate="fuldImport" 
      ErrorMessage="File type does not support." 
-     ValidationExpression="^([0-9a-zA-Z_\-~ :\\])+(.xlsx|.xls)$"></asp:RegularExpressionValidator>
+     ValidationExpression="^([0-9a-zA-Z_\-~ :\\()])+(.xlsx|.xls)$"></asp:RegularExpressionValidator>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
