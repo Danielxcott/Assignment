@@ -21,7 +21,9 @@ namespace Cinema.DAO.Member
 
         public DataTable GetExport()
         {
-            strSql = "SELECT * FROM Members ";
+            strSql = "SELECT Members.FullName, Members.Address, Movies.MoviesRented, Salutations.Salutation";
+            strSql += " FROM Members INNER JOIN Movies ON Members.MovieId = Movies.MovieId";
+            strSql += " INNER JOIN Salutations ON Members.SalutationId = Salutations.SalutationId";
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
 

@@ -1,11 +1,11 @@
 ﻿using Cinema.Entities.Member;
 using Cinema.Services.Member;
-using Microsoft.Ajax.Utilities;
 using OfficeOpenXml;
-using System;
 using System.Data;
 using System.IO;
 using System.Web.UI.WebControls;
+using System;
+using System.Web.UI;
 
 namespace Cinema.Web.Views.Member
 {
@@ -43,19 +43,28 @@ namespace Cinema.Web.Views.Member
 
         protected void LnkExportBtn(object sender, EventArgs e)
         {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Excel file is successfully exported.');", true);
             MemberService memberService = new MemberService();
             DataTable dt = memberService.GetExport();
+            var filepath = Server.MapPath("~/Files/") + "member.xlsx";
+            ExportExcel(filepath, dt); 
+            Response.ContentType = "Application/x-msexcel";
+            Response.AppendHeader("Content-Disposition", "attachment; filename=member.xlsx");
+            Response.TransmitFile(filepath);
+            Response.Flush();
+            Response.End();
+        }
 
-            var filepath = Server.MapPath("~/Files/")+"member.xlsx";
+        private void ExportExcel(string filepath,DataTable dt)
+        {
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             using (ExcelPackage excelPackage = new ExcelPackage())
             {
-                excelPackage.Workbook.Worksheets.Add("Member").Cells[1,1].LoadFromDataTable(dt,true);
+                excelPackage.Workbook.Worksheets.Add("Member").Cells[1, 1].LoadFromDataTable(dt, true);
                 if (File.Exists(filepath))
                 {
                     File.Delete(filepath);
                     excelPackage.SaveAs(new FileInfo(filepath));
-
                 }
                 excelPackage.SaveAs(new FileInfo(filepath));
             }
@@ -73,7 +82,7 @@ namespace Cinema.Web.Views.Member
         {
             FileInfo fileInfo = new FileInfo(filepath);
 
-            using(ExcelPackage excelPackage = new ExcelPackage(fileInfo))
+            using (ExcelPackage excelPackage = new ExcelPackage(fileInfo))
             {
                 ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
                 ExcelWorksheet excelWorksheet = excelPackage.Workbook.Worksheets[0];
@@ -83,12 +92,12 @@ namespace Cinema.Web.Views.Member
 
                 for (int i = 2; i <= rowno; i++)
                 {
-                        memberEntity.MemberId = Convert.ToInt32(excelWorksheet.Cells[i, 1].Value);
-                        memberEntity.FullName = Convert.ToString(excelWorksheet.Cells[i, 2].Value);
-                        memberEntity.Address = Convert.ToString(excelWorksheet.Cells[i, 3].Value);
-                        memberEntity.MovieId = Convert.ToInt32(excelWorksheet.Cells[i, 4].Value);
-                        memberEntity.SalutationId = Convert.ToInt32(excelWorksheet.Cells[i, 5].Value);
-                        memberService.Insert(memberEntity);
+                    memberEntity.MemberId = Convert.ToInt32(excelWorksheet.Cells[i, 1].Value);
+                    memberEntity.FullName = Convert.ToString(excelWorksheet.Cells[i, 2].Value);
+                    memberEntity.Address = Convert.ToString(excelWorksheet.Cells[i, 3].Value);
+                    memberEntity.MovieId = Convert.ToInt32(excelWorksheet.Cells[i, 4].Value);
+                    memberEntity.SalutationId = Convert.ToInt32(excelWorksheet.Cells[i, 5].Value);
+                    memberService.Insert(memberEntity);
                 }
                 BindGrid();
             }
