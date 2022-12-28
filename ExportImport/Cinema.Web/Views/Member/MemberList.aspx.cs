@@ -6,6 +6,8 @@ using System.IO;
 using System.Web.UI.WebControls;
 using System;
 using System.Web.UI;
+using Cinema.Services.Movie;
+using Cinema.Services.Salutation;
 
 namespace Cinema.Web.Views.Member
 {
@@ -89,14 +91,15 @@ namespace Cinema.Web.Views.Member
                 int rowno = excelWorksheet.Dimension.End.Row;
                 MemberEntity memberEntity = new MemberEntity();
                 MemberService memberService = new MemberService();
+                MovieService movieService = new MovieService();
+                SalutationService salutationService = new SalutationService();
 
                 for (int i = 2; i <= rowno; i++)
                 {
-                    memberEntity.MemberId = Convert.ToInt32(excelWorksheet.Cells[i, 1].Value);
-                    memberEntity.FullName = Convert.ToString(excelWorksheet.Cells[i, 2].Value);
-                    memberEntity.Address = Convert.ToString(excelWorksheet.Cells[i, 3].Value);
-                    memberEntity.MovieId = Convert.ToInt32(excelWorksheet.Cells[i, 4].Value);
-                    memberEntity.SalutationId = Convert.ToInt32(excelWorksheet.Cells[i, 5].Value);
+                    memberEntity.FullName = Convert.ToString(excelWorksheet.Cells[i, 1].Value);
+                    memberEntity.Address = Convert.ToString(excelWorksheet.Cells[i, 2].Value);
+                    memberEntity.MovieId = movieService.CheckName(Convert.ToString(excelWorksheet.Cells[i, 3].Value));
+                    memberEntity.SalutationId = salutationService.CheckName(Convert.ToString(excelWorksheet.Cells[i, 4].Value));
                     memberService.Insert(memberEntity);
                 }
                 BindGrid();

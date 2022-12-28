@@ -20,6 +20,12 @@ namespace Cinema.Services.Movie
             return dt;
         }
 
+        public int CheckName(string word)
+        {
+            int movieid = movieDao.CheckName(word);
+            return movieid;
+        }
+
         public int Exist(MovieEntity movieEntity)
         {
             int exist = movieDao.Exist(movieEntity);

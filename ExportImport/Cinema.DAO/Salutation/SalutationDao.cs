@@ -26,6 +26,16 @@ namespace Cinema.DAO.Salutation
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
 
+        public int CheckName(string word)
+        {
+            strSql = "SELECT SalutationId FROM Salutations " +
+                      "WHERE Salutation = " + "@Salutation";
+            SqlParameter[] sqlParams = {
+                new SqlParameter("@Salutation",word),
+            };
+            return Convert.ToInt32(connection.ExecuteScalar(CommandType.Text, strSql, sqlParams));
+        }
+
         public int Exist(SalutationEntity salutationEntity)
         {
             strSql = "SELECT COUNT(Salutation) FROM Salutations " +
